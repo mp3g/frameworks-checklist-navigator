@@ -10,13 +10,38 @@ const Index = () => {
 
   const selectedDimension = localDimensions.find((d) => d.id === selectedDimensionId);
 
-  const handleToggleComplete = (areaId: string) => {
+  const handleToggleComplete = (areaId: string, proposalId?: string) => {
     setLocalDimensions(prevDimensions => 
       prevDimensions.map(dimension => ({
         ...dimension,
-        areas: dimension.areas.map(area => 
-          area.id === areaId ? { ...area, isCompleted: !area.isCompleted } : area
-        )
+        areas: dimension.areas.map(area => {
+          if (area.id !== areaId) return area;
+          
+          if (proposalId) {
+            // Toggle single proposal
+            const updatedProposals = area.remediationProposals.map(proposal =>
+              proposal.id === proposalId
+                ? { ...proposal, isCompleted: !proposal.isCompleted }
+                : proposal
+            );
+            const allCompleted = updatedProposals.every(p => p.isCompleted);
+            return {
+              ...area,
+              isCompleted: allCompleted,
+              remediationProposals: updatedProposals
+            };
+          } else {
+            // Toggle all proposals
+            return {
+              ...area,
+              isCompleted: !area.isCompleted,
+              remediationProposals: area.remediationProposals.map(proposal => ({
+                ...proposal,
+                isCompleted: !area.isCompleted
+              }))
+            };
+          }
+        })
       }))
     );
   };

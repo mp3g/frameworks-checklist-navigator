@@ -15,10 +15,12 @@ export const dimensions: Dimension[] = [
           {
             id: "1-1-1",
             text: "Implement role-based access control (RBAC)",
+            isCompleted: false,
           },
           {
             id: "1-1-2",
             text: "Set up multi-factor authentication",
+            isCompleted: false,
           },
         ],
       },
@@ -31,6 +33,7 @@ export const dimensions: Dimension[] = [
           {
             id: "1-2-1",
             text: "Use industry-standard encryption algorithms",
+            isCompleted: true,
           },
         ],
       },
@@ -50,10 +53,12 @@ export const dimensions: Dimension[] = [
           {
             id: "2-1-1",
             text: "Implement code splitting",
+            isCompleted: false,
           },
           {
             id: "2-1-2",
             text: "Optimize asset loading",
+            isCompleted: false,
           },
         ],
       },

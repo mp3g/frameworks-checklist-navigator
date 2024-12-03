@@ -1,6 +1,7 @@
 export interface RemediationProposal {
   id: string;
   text: string;
+  isCompleted: boolean;
 }
 
 export interface Area {

@@ -5,7 +5,7 @@ import { toast } from "sonner";
 
 interface DimensionContentProps {
   dimension: Dimension;
-  onToggleComplete: (areaId: string) => void;
+  onToggleComplete: (areaId: string, proposalId?: string) => void;
 }
 
 export const DimensionContent = ({
