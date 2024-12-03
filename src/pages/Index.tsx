@@ -2,15 +2,55 @@ import { useState } from "react";
 import { dimensions } from "@/data/mockData";
 import { DimensionContent } from "@/components/DimensionContent";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 const Index = () => {
   const [selectedDimensionId, setSelectedDimensionId] = useState(dimensions[0].id);
+  const [localDimensions, setLocalDimensions] = useState(dimensions);
 
-  const selectedDimension = dimensions.find((d) => d.id === selectedDimensionId);
+  const selectedDimension = localDimensions.find((d) => d.id === selectedDimensionId);
 
   const handleToggleComplete = (areaId: string) => {
-    // In a real app, this would update the backend
-    console.log("Toggle complete:", areaId);
+    setLocalDimensions(prevDimensions => 
+      prevDimensions.map(dimension => ({
+        ...dimension,
+        areas: dimension.areas.map(area => 
+          area.id === areaId ? { ...area, isCompleted: !area.isCompleted } : area
+        )
+      }))
+    );
+  };
+
+  const handleExportAll = () => {
+    const dataStr = JSON.stringify(localDimensions, null, 2);
+    const blob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "all-dimensions.json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    toast.success("All dimensions exported successfully");
+  };
+
+  const handleImportAll = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const content = e.target?.result as string;
+          const importedData = JSON.parse(content);
+          setLocalDimensions(importedData);
+          toast.success("Data imported successfully");
+        } catch (error) {
+          toast.error("Error importing data");
+        }
+      };
+      reader.readAsText(file);
+    }
   };
 
   return (
@@ -18,9 +58,28 @@ const Index = () => {
       {/* Sidebar */}
       <div className="w-64 bg-white border-r shadow-sm">
         <div className="p-4">
-          <h1 className="text-xl font-bold text-primary mb-4">Dimensions</h1>
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="text-xl font-bold text-primary">Dimensions</h1>
+            <div className="space-x-2">
+              <button
+                onClick={handleExportAll}
+                className="text-xs text-accent hover:text-accent/80"
+              >
+                Export
+              </button>
+              <label className="text-xs text-accent hover:text-accent/80 cursor-pointer">
+                Import
+                <input
+                  type="file"
+                  accept=".json"
+                  onChange={handleImportAll}
+                  className="hidden"
+                />
+              </label>
+            </div>
+          </div>
           <nav>
-            {dimensions.map((dimension) => (
+            {localDimensions.map((dimension) => (
               <button
                 key={dimension.id}
                 onClick={() => setSelectedDimensionId(dimension.id)}
