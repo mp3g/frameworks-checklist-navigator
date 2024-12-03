@@ -1,11 +1,11 @@
-import { Attribute } from "../types/attributes";
+import { Dimension } from "../types/attributes";
 
-export const attributes: Attribute[] = [
+export const dimensions: Dimension[] = [
   {
     id: "1",
     title: "Security",
     description: "Core security practices and implementations",
-    subattributes: [
+    areas: [
       {
         id: "1-1",
         title: "Access Control",
@@ -40,7 +40,7 @@ export const attributes: Attribute[] = [
     id: "2",
     title: "Performance",
     description: "Application performance and optimization",
-    subattributes: [
+    areas: [
       {
         id: "2-1",
         title: "Load Time",

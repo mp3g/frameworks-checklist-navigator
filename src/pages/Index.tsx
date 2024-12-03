@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { attributes } from "@/data/mockData";
-import { AttributeContent } from "@/components/AttributeContent";
+import { dimensions } from "@/data/mockData";
+import { DimensionContent } from "@/components/DimensionContent";
 import { cn } from "@/lib/utils";
 
 const Index = () => {
-  const [selectedAttributeId, setSelectedAttributeId] = useState(attributes[0].id);
+  const [selectedDimensionId, setSelectedDimensionId] = useState(dimensions[0].id);
 
-  const selectedAttribute = attributes.find((a) => a.id === selectedAttributeId);
+  const selectedDimension = dimensions.find((d) => d.id === selectedDimensionId);
 
-  const handleToggleComplete = (subattributeId: string) => {
+  const handleToggleComplete = (areaId: string) => {
     // In a real app, this would update the backend
-    console.log("Toggle complete:", subattributeId);
+    console.log("Toggle complete:", areaId);
   };
 
   return (
@@ -18,20 +18,20 @@ const Index = () => {
       {/* Sidebar */}
       <div className="w-64 bg-white border-r shadow-sm">
         <div className="p-4">
-          <h1 className="text-xl font-bold text-primary mb-4">Attributes</h1>
+          <h1 className="text-xl font-bold text-primary mb-4">Dimensions</h1>
           <nav>
-            {attributes.map((attribute) => (
+            {dimensions.map((dimension) => (
               <button
-                key={attribute.id}
-                onClick={() => setSelectedAttributeId(attribute.id)}
+                key={dimension.id}
+                onClick={() => setSelectedDimensionId(dimension.id)}
                 className={cn(
                   "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors",
-                  selectedAttributeId === attribute.id
+                  selectedDimensionId === dimension.id
                     ? "bg-accent text-white"
                     : "hover:bg-gray-100 text-gray-700"
                 )}
               >
-                {attribute.title}
+                {dimension.title}
               </button>
             ))}
           </nav>
@@ -40,9 +40,9 @@ const Index = () => {
 
       {/* Main Content */}
       <div className="flex-1">
-        {selectedAttribute && (
-          <AttributeContent
-            attribute={selectedAttribute}
+        {selectedDimension && (
+          <DimensionContent
+            dimension={selectedDimension}
             onToggleComplete={handleToggleComplete}
           />
         )}

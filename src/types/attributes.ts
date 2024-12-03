@@ -3,7 +3,7 @@ export interface RemediationProposal {
   text: string;
 }
 
-export interface Subattribute {
+export interface Area {
   id: string;
   title: string;
   description: string;
@@ -11,9 +11,9 @@ export interface Subattribute {
   remediationProposals: RemediationProposal[];
 }
 
-export interface Attribute {
+export interface Dimension {
   id: string;
   title: string;
   description: string;
-  subattributes: Subattribute[];
+  areas: Area[];
 }
