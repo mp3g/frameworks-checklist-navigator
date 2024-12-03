@@ -16,5 +16,6 @@ export interface Dimension {
   id: string;
   title: string;
   description: string;
+  category: "OWASP ASVS" | "DSOMM" | "MITRE ATT&CK";
   areas: Area[];
 }
