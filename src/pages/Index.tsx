@@ -36,10 +36,10 @@ const Index = () => {
   };
 
   const getProgressColor = (progress: number) => {
-    if (progress >= 80) return "bg-[#F2FCE2]";
-    if (progress >= 50) return "bg-[#FEF7CD]";
-    if (progress >= 20) return "bg-[#FDE1D3]";
-    return "bg-[#FFDEE2]";
+    if (progress >= 80) return "bg-[#F2FCE2]"; // Soft Green
+    if (progress >= 50) return "bg-[#FEF7CD]"; // Soft Yellow
+    if (progress >= 20) return "bg-[#FDE1D3]"; // Soft Peach
+    return "bg-[#FFDEE2]"; // Soft Pink
   };
 
   const handleToggleComplete = (areaId: string, proposalId?: string) => {
@@ -118,45 +118,14 @@ const Index = () => {
     reader.readAsText(file);
   };
 
-  // Prevent event propagation from main content to accordion
-  const handleMainContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   return (
     <div className="min-h-screen flex bg-gray-50">
+      {/* Sidebar */}
       <div className="w-64 bg-white border-r shadow-sm">
         <ScrollArea className="h-screen">
           <div className="p-4">
             <h1 className="text-xl font-bold text-primary mb-4">Dimensions</h1>
-            <div className="flex gap-2 mb-4">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleExport}
-                className="flex items-center gap-2"
-              >
-                <Download className="h-4 w-4" />
-                Export
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex items-center gap-2"
-                onClick={() => document.getElementById('import-input')?.click()}
-              >
-                <Upload className="h-4 w-4" />
-                Import
-              </Button>
-              <input
-                id="import-input"
-                type="file"
-                accept=".json"
-                onChange={handleImport}
-                className="hidden"
-              />
-            </div>
-            <Accordion type="multiple" defaultValue={["owasp", "dsomm", "mitre"]} className="space-y-2">
+            <Accordion type="single" collapsible className="space-y-2">
               <AccordionItem value="owasp">
                 <AccordionTrigger className="text-sm font-semibold">
                   OWASP ASVS
@@ -246,12 +215,42 @@ const Index = () => {
         </ScrollArea>
       </div>
 
-      <div className="flex-1" onClick={handleMainContentClick}>
+      {/* Main Content */}
+      <div className="flex-1">
         {selectedDimension && (
-          <DimensionContent
-            dimension={selectedDimension}
-            onToggleComplete={handleToggleComplete}
-          />
+          <>
+            <div className="p-4 border-b flex justify-end space-x-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleExport}
+                className="flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                Export
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2"
+                onClick={() => document.getElementById('import-input')?.click()}
+              >
+                <Upload className="h-4 w-4" />
+                Import
+              </Button>
+              <input
+                id="import-input"
+                type="file"
+                accept=".json"
+                onChange={handleImport}
+                className="hidden"
+              />
+            </div>
+            <DimensionContent
+              dimension={selectedDimension}
+              onToggleComplete={handleToggleComplete}
+            />
+          </>
         )}
       </div>
     </div>
