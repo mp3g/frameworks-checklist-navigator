@@ -1,17 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>attribute-navigator</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Navigator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            background-color: white;
+            border-right: 1px solid #e2e8f0;
+            padding: 1rem;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 1.5rem;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .accordion-section {
+            margin-bottom: 1rem;
+        }
+
+        .accordion-header {
+            padding: 0.75rem;
+            background-color: #f8fafc;
+            cursor: pointer;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 0.5rem;
+        }
+
+        .dimension-button {
+            width: 100%;
+            text-align: left;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .area-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #334155;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .checkbox {
+            margin-right: 0.5rem;
+        }
+
+        .button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e2e8f0;
+            background-color: white;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+
+        .button:hover {
+            background-color: #f8fafc;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            padding: 1rem;
+            background-color: #334155;
+            color: white;
+            border-radius: 0.375rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h1 style="margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">Dimensions</h1>
+        <div class="button-container" style="margin-bottom: 1rem;">
+            <button class="button" onclick="exportData()">Export</button>
+            <button class="button" onclick="document.getElementById('import-input').click()">Import</button>
+            <input type="file" id="import-input" style="display: none;" onchange="importData(event)">
+        </div>
+        <div id="dimensions-menu"></div>
+    </div>
+    <div class="main-content" id="main-content"></div>
+    <div class="toast" id="toast"></div>
+
+    <script>
+        let dimensions = [
+            {
+                id: "1",
+                title: "Security",
+                description: "Core security practices and implementations",
+                category: "OWASP ASVS",
+                areas: [
+                    {
+                        id: "1-1",
+                        title: "Access Control",
+                        description: "Implementation of proper access control mechanisms",
+                        isCompleted: false,
+                        remediationProposals: [
+                            {
+                                id: "1-1-1",
+                                text: "Implement role-based access control (RBAC)",
+                                isCompleted: false
+                            },
+                            {
+                                id: "1-1-2",
+                                text: "Set up multi-factor authentication",
+                                isCompleted: false
+                            }
+                        ]
+                    }
+                ]
+            }
+            // ... Initial data structure remains the same
+        ];
+
+        function calculateProgress(dimension) {
+            let totalProposals = 0;
+            let completedProposals = 0;
+
+            dimension.areas.forEach(area => {
+                totalProposals += area.remediationProposals.length;
+                completedProposals += area.remediationProposals.filter(p => p.isCompleted).length;
+            });
+
+            return totalProposals > 0 ? (completedProposals / totalProposals) * 100 : 0;
+        }
+
+        function getProgressColor(progress) {
+            if (progress >= 80) return "#F2FCE2"; // Soft Green
+            if (progress >= 50) return "#FEF7CD"; // Soft Yellow
+            if (progress >= 20) return "#FDE1D3"; // Soft Peach
+            return "#FFDEE2"; // Soft Pink
+        }
+
+        function renderDimensionsMenu() {
+            const menu = document.getElementById('dimensions-menu');
+            menu.innerHTML = '';
+
+            const categories = {
+                "OWASP ASVS": [],
+                "DSOMM": [],
+                "MITRE ATT&CK": []
+            };
+
+            dimensions.forEach(dimension => {
+                categories[dimension.category].push(dimension);
+            });
+
+            Object.entries(categories).forEach(([category, categoryDimensions]) => {
+                const section = document.createElement('div');
+                section.className = 'accordion-section';
+                
+                const header = document.createElement('div');
+                header.className = 'accordion-header';
+                header.textContent = category;
+                header.onclick = () => toggleAccordion(header);
+
+                const content = document.createElement('div');
+                content.className = 'accordion-content';
+
+                categoryDimensions.forEach(dimension => {
+                    const progress = calculateProgress(dimension);
+                    const button = document.createElement('button');
+                    button.className = 'dimension-button';
+                    button.textContent = dimension.title;
+                    button.style.backgroundColor = getProgressColor(progress);
+                    button.onclick = () => renderDimension(dimension);
+                    content.appendChild(button);
+                });
+
+                section.appendChild(header);
+                section.appendChild(content);
+                menu.appendChild(section);
+            });
+        }
+
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function renderDimension(dimension) {
+            const content = document.getElementById('main-content');
+            content.innerHTML = `
+                <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">${dimension.title}</h2>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">${dimension.description}</p>
+                <div id="areas-container"></div>
+            `;
+
+            const areasContainer = document.getElementById('areas-container');
+            dimension.areas.forEach(area => {
+                const completedProposals = area.remediationProposals.filter(p => p.isCompleted).length;
+                const progress = (completedProposals / area.remediationProposals.length) * 100;
+
+                const areaElement = document.createElement('div');
+                areaElement.className = 'area-card';
+                areaElement.innerHTML = `
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <input type="checkbox" class="checkbox" 
+                            ${area.isCompleted ? 'checked' : ''} 
+                            onchange="toggleArea('${dimension.id}', '${area.id}')">
+                        <div style="flex: 1;">
+                            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">${area.title}</h3>
+                            <p style="color: #64748b; margin-bottom: 1rem;">${area.description}</p>
+                            
+                            <div style="margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>Progress</span>
+                                    <span>${Math.round(progress)}%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${progress}%"></div>
+                                </div>
+                            </div>
+
+                            <div class="remediation-proposals">
+                                ${area.remediationProposals.map(proposal => `
+                                    <div style="display: flex; gap: 0.75rem; margin-bottom: 0.5rem;">
+                                        <input type="checkbox" 
+                                            ${proposal.isCompleted ? 'checked' : ''} 
+                                            onchange="toggleProposal('${dimension.id}', '${area.id}', '${proposal.id}')">
+                                        <span>${proposal.text}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                areasContainer.appendChild(areaElement);
+            });
+        }
+
+        function toggleArea(dimensionId, areaId) {
+            const dimension = dimensions.find(d => d.id === dimensionId);
+            const area = dimension.areas.find(a => a.id === areaId);
+            area.isCompleted = !area.isCompleted;
+            area.remediationProposals.forEach(proposal => {
+                proposal.isCompleted = area.isCompleted;
+            });
+            renderDimensionsMenu();
+            renderDimension(dimension);
+        }
+
+        function toggleProposal(dimensionId, areaId, proposalId) {
+            const dimension = dimensions.find(d => d.id === dimensionId);
+            const area = dimension.areas.find(a => a.id === areaId);
+            const proposal = area.remediationProposals.find(p => p.id === proposalId);
+            proposal.isCompleted = !proposal.isCompleted;
+            area.isCompleted = area.remediationProposals.every(p => p.isCompleted);
+            renderDimensionsMenu();
+            renderDimension(dimension);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+
+        function exportData() {
+            const dataStr = JSON.stringify(dimensions, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'dimensions-export.json';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            showToast('Data exported successfully');
+        }
+
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    dimensions = JSON.parse(e.target.result);
+                    renderDimensionsMenu();
+                    showToast('Data imported successfully');
+                } catch (error) {
+                    showToast('Error importing data. Please check the file format.');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = ''; // Reset file input
+        }
+
+        // Initial render
+        renderDimensionsMenu();
+        if (dimensions.length > 0) {
+            renderDimension(dimensions[0]);
+        }
+    </script>
+</body>
 </html>
