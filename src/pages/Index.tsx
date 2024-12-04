@@ -9,10 +9,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
+import { Download, Upload } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
   const [selectedDimensionId, setSelectedDimensionId] = useState(dimensions[0].id);
   const [localDimensions, setLocalDimensions] = useState(dimensions);
+  const { toast } = useToast();
 
   const selectedDimension = localDimensions.find(
     (d) => d.id === selectedDimensionId
@@ -32,10 +36,10 @@ const Index = () => {
   };
 
   const getProgressColor = (progress: number) => {
-    if (progress >= 80) return "text-green-600";
-    if (progress >= 50) return "text-yellow-600";
-    if (progress >= 20) return "text-orange-600";
-    return "text-red-600";
+    if (progress >= 80) return "bg-[#F2FCE2]"; // Soft Green
+    if (progress >= 50) return "bg-[#FEF7CD]"; // Soft Yellow
+    if (progress >= 20) return "bg-[#FDE1D3]"; // Soft Peach
+    return "bg-[#FFDEE2]"; // Soft Pink
   };
 
   const handleToggleComplete = (areaId: string, proposalId?: string) => {
@@ -72,6 +76,48 @@ const Index = () => {
     );
   };
 
+  const handleExport = () => {
+    const dataStr = JSON.stringify(localDimensions, null, 2);
+    const dataBlob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "dimensions-export.json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    toast({
+      title: "Export Successful",
+      description: "Your data has been exported successfully.",
+    });
+  };
+
+  const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const importedData = JSON.parse(e.target?.result as string);
+        setLocalDimensions(importedData);
+        toast({
+          title: "Import Successful",
+          description: "Your data has been imported successfully.",
+        });
+      } catch (error) {
+        toast({
+          title: "Import Failed",
+          description: "There was an error importing your data. Please check the file format.",
+          variant: "destructive",
+        });
+      }
+    };
+    reader.readAsText(file);
+  };
+
   return (
     <div className="min-h-screen flex bg-gray-50">
       {/* Sidebar */}
@@ -95,11 +141,10 @@ const Index = () => {
                             key={dimension.id}
                             onClick={() => setSelectedDimensionId(dimension.id)}
                             className={cn(
-                              "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm",
+                              "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
                               selectedDimensionId === dimension.id
                                 ? "bg-accent text-white"
-                                : "hover:bg-gray-100",
-                              getProgressColor(progress)
+                                : getProgressColor(progress)
                             )}
                           >
                             {dimension.title}
@@ -124,11 +169,10 @@ const Index = () => {
                             key={dimension.id}
                             onClick={() => setSelectedDimensionId(dimension.id)}
                             className={cn(
-                              "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm",
+                              "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
                               selectedDimensionId === dimension.id
                                 ? "bg-accent text-white"
-                                : "hover:bg-gray-100",
-                              getProgressColor(progress)
+                                : getProgressColor(progress)
                             )}
                           >
                             {dimension.title}
@@ -153,11 +197,10 @@ const Index = () => {
                             key={dimension.id}
                             onClick={() => setSelectedDimensionId(dimension.id)}
                             className={cn(
-                              "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm",
+                              "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
                               selectedDimensionId === dimension.id
                                 ? "bg-accent text-white"
-                                : "hover:bg-gray-100",
-                              getProgressColor(progress)
+                                : getProgressColor(progress)
                             )}
                           >
                             {dimension.title}
@@ -175,10 +218,39 @@ const Index = () => {
       {/* Main Content */}
       <div className="flex-1">
         {selectedDimension && (
-          <DimensionContent
-            dimension={selectedDimension}
-            onToggleComplete={handleToggleComplete}
-          />
+          <>
+            <div className="p-4 border-b flex justify-end space-x-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleExport}
+                className="flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                Export
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2"
+                onClick={() => document.getElementById('import-input')?.click()}
+              >
+                <Upload className="h-4 w-4" />
+                Import
+              </Button>
+              <input
+                id="import-input"
+                type="file"
+                accept=".json"
+                onChange={handleImport}
+                className="hidden"
+              />
+            </div>
+            <DimensionContent
+              dimension={selectedDimension}
+              onToggleComplete={handleToggleComplete}
+            />
+          </>
         )}
       </div>
     </div>
