@@ -125,7 +125,7 @@ const Index = () => {
         <ScrollArea className="h-screen">
           <div className="p-4">
             <h1 className="text-xl font-bold text-primary mb-4">Dimensions</h1>
-            <Accordion type="single" collapsible className="space-y-2">
+            <Accordion type="multiple" defaultValue={["owasp", "dsomm", "mitre"]} className="space-y-2">
               <AccordionItem value="owasp">
                 <AccordionTrigger className="text-sm font-semibold">
                   OWASP ASVS
