@@ -2,94 +2,26 @@ import { Dimension } from "../types/attributes";
 
 export const dimensions: Dimension[] = [
   {
-    id: "1",
-    title: "Security",
-    description: "Core security practices and implementations",
-    category: "OWASP ASVS",
+    id: "D01",
+    title: "Application Security",
+    description: "Application security involves protecting software applications from threats throughout their lifecycle, from development to deployment. This includes identifying and fixing vulnerabilities, implementing secure coding practices, and using tools like firewalls and encryption to prevent unauthorized access and data breaches",
     areas: [
       {
-        id: "1-1",
-        title: "Access Control",
-        description: "Implementation of proper access control mechanisms",
+        id: "A02",
+        title: "API and Web Service",
+        description: "API security refers to the practices and procedures that protect application programming interfaces (APIs) from misuse, malicious bot attacks and other cybersecurity threats.",
         isCompleted: false,
-        remediationProposals: [
-          {
-            id: "1-1-1",
-            text: "Implement role-based access control (RBAC)",
-            isCompleted: false,
-          },
-          {
-            id: "1-1-2",
-            text: "Set up multi-factor authentication",
-            isCompleted: false,
-          },
-        ],
-      },
-      {
-        id: "1-2",
-        title: "Data Encryption",
-        description: "Proper encryption of sensitive data",
-        isCompleted: true,
-        remediationProposals: [
-          {
-            id: "1-2-1",
-            text: "Use industry-standard encryption algorithms",
-            isCompleted: true,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "2",
-    title: "Performance",
-    description: "Application performance and optimization",
-    category: "DSOMM",
-    areas: [
-      {
-        id: "2-1",
-        title: "Load Time",
-        description: "Initial application load time optimization",
-        isCompleted: false,
-        remediationProposals: [
-          {
-            id: "2-1-1",
-            text: "Implement code splitting",
-            isCompleted: false,
-          },
-          {
-            id: "2-1-2",
-            text: "Optimize asset loading",
-            isCompleted: false,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "3",
-    title: "Threat Detection",
-    description: "Advanced threat detection and response",
-    category: "MITRE ATT&CK",
-    areas: [
-      {
-        id: "3-1",
-        title: "Intrusion Detection",
-        description: "Implementation of intrusion detection systems",
-        isCompleted: false,
-        remediationProposals: [
-          {
-            id: "3-1-1",
-            text: "Set up network monitoring",
-            isCompleted: false,
-          },
-          {
-            id: "3-1-2",
-            text: "Configure alert systems",
-            isCompleted: false,
-          },
-        ],
-      },
-    ],
-  },
+        remediationProposals: {
+          title: "SOAP Web Service",
+          category: "OWASP ASVS",
+          isCompleted: false,
+          description: "Secure implementation of SOAP Web Services",
+          mitigation_measures: [
+            "Verify that XSD schema validation takes place to ensure a properly formed XML document, followed by validation of each input field before any processing of that data takes place.",
+            "Verify that the message payload is signed using WS-Security to ensure reliable transport between client and service."
+          ]
+        }
+      }
+    ]
+  }
 ];

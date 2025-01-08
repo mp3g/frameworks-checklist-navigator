@@ -1,7 +1,14 @@
-export interface RemediationProposal {
-  id: string;
+export interface MitigationMeasure {
   text: string;
   isCompleted: boolean;
+}
+
+export interface RemediationProposal {
+  title: string;
+  category: "OWASP ASVS" | "DSOMM" | "MITRE ATT&CK";
+  isCompleted: boolean;
+  description: string;
+  mitigation_measures: string[];
 }
 
 export interface Area {
@@ -9,13 +16,12 @@ export interface Area {
   title: string;
   description: string;
   isCompleted: boolean;
-  remediationProposals: RemediationProposal[];
+  remediationProposals: RemediationProposal;
 }
 
 export interface Dimension {
   id: string;
   title: string;
   description: string;
-  category: "OWASP ASVS" | "DSOMM" | "MITRE ATT&CK";
   areas: Area[];
 }

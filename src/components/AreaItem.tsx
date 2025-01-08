@@ -10,16 +10,14 @@ import {
 
 interface AreaItemProps {
   area: Area;
-  onToggleComplete: (id: string, proposalId?: string) => void;
+  onToggleComplete: (id: string, proposalTitle?: string) => void;
 }
 
 export const AreaItem = ({
   area,
   onToggleComplete,
 }: AreaItemProps) => {
-  const completedProposals = area.remediationProposals.filter(p => p.isCompleted).length;
-  const totalProposals = area.remediationProposals.length;
-  const progress = totalProposals > 0 ? (completedProposals / totalProposals) * 100 : 0;
+  const progress = area.remediationProposals.isCompleted ? 100 : 0;
 
   return (
     <div className="border rounded-lg p-4 mb-4 bg-white shadow-sm">
@@ -44,21 +42,34 @@ export const AreaItem = ({
           <Accordion type="single" collapsible>
             <AccordionItem value="remediation">
               <AccordionTrigger className="text-sm text-accent hover:text-accent/80">
-                View Remediation Proposals
+                View Remediation Proposal
               </AccordionTrigger>
               <AccordionContent>
-                <ul className="space-y-2">
-                  {area.remediationProposals.map((proposal) => (
-                    <li key={proposal.id} className="flex items-center gap-3">
-                      <Checkbox
-                        checked={proposal.isCompleted}
-                        onCheckedChange={() => onToggleComplete(area.id, proposal.id)}
-                        className="mt-1"
-                      />
-                      <span className="text-gray-600">{proposal.text}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="border-l-2 pl-4">
+                  <div className="flex items-start gap-3 mb-2">
+                    <Checkbox
+                      checked={area.remediationProposals.isCompleted}
+                      onCheckedChange={() => onToggleComplete(area.id, area.remediationProposals.title)}
+                      className="mt-1"
+                    />
+                    <div>
+                      <div className="text-gray-800 font-medium">{area.remediationProposals.title}</div>
+                      <div className="text-sm text-gray-600 mt-1">{area.remediationProposals.description}</div>
+                      <div className="text-xs text-accent mt-1">Category: {area.remediationProposals.category}</div>
+                      
+                      <div className="mt-4">
+                        <h4 className="text-sm font-medium mb-2">Mitigation Measures:</h4>
+                        <ul className="list-disc pl-5 space-y-2">
+                          {area.remediationProposals.mitigation_measures.map((measure, index) => (
+                            <li key={index} className="text-sm text-gray-600">
+                              {measure}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
