@@ -19,9 +19,7 @@ export const AreaItem = ({
   onToggleComplete,
 }: AreaItemProps) => {
   const { toast } = useToast();
-  const completedProposals = area.remediationProposals.filter(p => p.isCompleted).length;
-  const totalProposals = area.remediationProposals.length;
-  const progress = totalProposals > 0 ? (completedProposals / totalProposals) * 100 : 0;
+  const progress = area.remediationProposals.isCompleted ? 100 : 0;
 
   const handleProposalHover = (measures: string[]) => {
     toast({
@@ -62,26 +60,23 @@ export const AreaItem = ({
                 View Remediation Proposals
               </AccordionTrigger>
               <AccordionContent>
-                {area.remediationProposals.map((proposal) => (
-                  <div 
-                    key={proposal.id}
-                    className="border-l-2 pl-4 mb-4"
-                    onMouseEnter={() => handleProposalHover(proposal.mitigation_measures)}
-                  >
-                    <div className="flex items-start gap-3 mb-2">
-                      <Checkbox
-                        checked={proposal.isCompleted}
-                        onCheckedChange={() => onToggleComplete(area.id, proposal.title)}
-                        className="mt-1"
-                      />
-                      <div>
-                        <div className="text-gray-800 font-medium">{proposal.title}</div>
-                        <div className="text-sm text-gray-600 mt-1">{proposal.description}</div>
-                        <div className="text-xs text-accent mt-1">Category: {proposal.category}</div>
-                      </div>
+                <div 
+                  className="border-l-2 pl-4 mb-4"
+                  onMouseEnter={() => handleProposalHover(area.remediationProposals.mitigation_measures)}
+                >
+                  <div className="flex items-start gap-3 mb-2">
+                    <Checkbox
+                      checked={area.remediationProposals.isCompleted}
+                      onCheckedChange={() => onToggleComplete(area.id, area.remediationProposals.title)}
+                      className="mt-1"
+                    />
+                    <div>
+                      <div className="text-gray-800 font-medium">{area.remediationProposals.title}</div>
+                      <div className="text-sm text-gray-600 mt-1">{area.remediationProposals.description}</div>
+                      <div className="text-xs text-accent mt-1">Category: {area.remediationProposals.category}</div>
                     </div>
                   </div>
-                ))}
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

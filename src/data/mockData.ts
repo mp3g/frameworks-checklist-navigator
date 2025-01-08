@@ -11,30 +11,17 @@ export const dimensions: Dimension[] = [
         title: "API and Web Service",
         description: "API security refers to the practices and procedures that protect application programming interfaces (APIs) from misuse, malicious bot attacks and other cybersecurity threats.",
         isCompleted: false,
-        remediationProposals: [
-          {
-            id: "R01",
-            title: "SOAP Web Service",
-            category: "OWASP ASVS",
-            isCompleted: false,
-            description: "Secure implementation of SOAP Web Services",
-            mitigation_measures: [
-              "Verify that XSD schema validation takes place to ensure a properly formed XML document, followed by validation of each input field before any processing of that data takes place.",
-              "Verify that the message payload is signed using WS-Security to ensure reliable transport between client and service."
-            ]
-          },
-          {
-            id: "R02",
-            title: "REST API Security",
-            category: "DSOMM",
-            isCompleted: false,
-            description: "Implementation of secure REST APIs",
-            mitigation_measures: [
-              "Implement proper authentication mechanisms",
-              "Use HTTPS for all API endpoints"
-            ]
-          }
-        ]
+        remediationProposals: {
+          id: "R01",
+          title: "SOAP Web Service",
+          category: "OWASP ASVS",
+          isCompleted: false,
+          description: "Secure implementation of SOAP Web Services",
+          mitigation_measures: [
+            "Verify that XSD schema validation takes place to ensure a properly formed XML document, followed by validation of each input field before any processing of that data takes place.",
+            "Verify that the message payload is signed using WS-Security to ensure reliable transport between client and service."
+          ]
+        }
       }
     ]
   }

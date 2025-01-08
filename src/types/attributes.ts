@@ -12,7 +12,7 @@ export interface Area {
   title: string;
   description: string;
   isCompleted: boolean;
-  remediationProposals: RemediationProposal[];
+  remediationProposals: RemediationProposal;
 }
 
 export interface Dimension {

@@ -22,21 +22,18 @@ const getProgressColor = (progress: number) => {
 };
 
 const calculateDimensionProgress = (dimension: Dimension) => {
-  const totalProposals = dimension.areas.reduce(
-    (sum, area) => sum + area.remediationProposals.length,
+  const totalAreas = dimension.areas.length;
+  const completedAreas = dimension.areas.reduce(
+    (sum, area) => sum + (area.remediationProposals.isCompleted ? 1 : 0),
     0
   );
-  const completedProposals = dimension.areas.reduce(
-    (sum, area) => sum + area.remediationProposals.filter((p) => p.isCompleted).length,
-    0
-  );
-  return totalProposals > 0 ? (completedProposals / totalProposals) * 100 : 0;
+  return totalAreas > 0 ? (completedAreas / totalAreas) * 100 : 0;
 };
 
 const getDimensionsByCategory = (dimensions: Dimension[], category: string) => {
   return dimensions.filter((dimension) => 
     dimension.areas.some((area) => 
-      area.remediationProposals.some((proposal) => proposal.category === category)
+      area.remediationProposals.category === category
     )
   );
 };
