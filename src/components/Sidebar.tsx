@@ -43,7 +43,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
     <div className="w-64 bg-white border-r shadow-sm">
       <ScrollArea className="h-screen">
         <div className="p-4">
-          <h1 className="text-xl font-bold text-primary mb-4">Dimensions</h1>
+          <h1 className="text-lg font-bold text-primary mb-4">Dimensions</h1>
           <Accordion type="multiple" defaultValue={["owasp", "dsomm", "mitre"]} className="space-y-2">
             <AccordionItem value="owasp">
               <AccordionTrigger className="text-sm font-semibold">
@@ -58,13 +58,15 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                         key={dimension.id}
                         onClick={() => onSelectDimension(dimension.id)}
                         className={cn(
-                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
+                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-xs hover:brightness-95",
+                          getProgressColor(progress),
                           selectedDimensionId === dimension.id
-                            ? "bg-accent text-white"
-                            : getProgressColor(progress)
+                            ? "ring-2 ring-accent ring-opacity-50"
+                            : ""
                         )}
                       >
-                        {dimension.title}
+                        <div className="text-sm mb-0.5">{dimension.title}</div>
+                        <div className="text-xs text-gray-600">{dimension.description}</div>
                       </button>
                     );
                   })}
@@ -84,13 +86,15 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                         key={dimension.id}
                         onClick={() => onSelectDimension(dimension.id)}
                         className={cn(
-                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
+                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-xs hover:brightness-95",
+                          getProgressColor(progress),
                           selectedDimensionId === dimension.id
-                            ? "bg-accent text-white"
-                            : getProgressColor(progress)
+                            ? "ring-2 ring-accent ring-opacity-50"
+                            : ""
                         )}
                       >
-                        {dimension.title}
+                        <div className="text-sm mb-0.5">{dimension.title}</div>
+                        <div className="text-xs text-gray-600">{dimension.description}</div>
                       </button>
                     );
                   })}
@@ -110,13 +114,15 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                         key={dimension.id}
                         onClick={() => onSelectDimension(dimension.id)}
                         className={cn(
-                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
+                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-xs hover:brightness-95",
+                          getProgressColor(progress),
                           selectedDimensionId === dimension.id
-                            ? "bg-accent text-white"
-                            : getProgressColor(progress)
+                            ? "ring-2 ring-accent ring-opacity-50"
+                            : ""
                         )}
                       >
-                        {dimension.title}
+                        <div className="text-sm mb-0.5">{dimension.title}</div>
+                        <div className="text-xs text-gray-600">{dimension.description}</div>
                       </button>
                     );
                   })}
