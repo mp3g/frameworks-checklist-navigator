@@ -1,8 +1,3 @@
-export interface MitigationMeasure {
-  text: string;
-  isCompleted: boolean;
-}
-
 export interface RemediationProposal {
   title: string;
   category: "OWASP ASVS" | "DSOMM" | "MITRE ATT&CK";
@@ -16,7 +11,7 @@ export interface Area {
   title: string;
   description: string;
   isCompleted: boolean;
-  remediationProposals: RemediationProposal;
+  remediationProposals: RemediationProposal[];
 }
 
 export interface Dimension {

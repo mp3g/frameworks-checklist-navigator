@@ -34,6 +34,14 @@ const calculateDimensionProgress = (dimension: Dimension) => {
   return totalProposals > 0 ? (completedProposals / totalProposals) * 100 : 0;
 };
 
+const getDimensionsByCategory = (dimensions: Dimension[], category: string) => {
+  return dimensions.filter((dimension) => 
+    dimension.areas.some((area) => 
+      area.remediationProposals.some((proposal) => proposal.category === category)
+    )
+  );
+};
+
 export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: SidebarProps) => {
   return (
     <div className="w-64 bg-white border-r shadow-sm">
@@ -47,25 +55,23 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
               </AccordionTrigger>
               <AccordionContent>
                 <div className="space-y-1">
-                  {dimensions
-                    .filter((d) => d.category === "OWASP ASVS")
-                    .map((dimension) => {
-                      const progress = calculateDimensionProgress(dimension);
-                      return (
-                        <button
-                          key={dimension.id}
-                          onClick={() => onSelectDimension(dimension.id)}
-                          className={cn(
-                            "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
-                            selectedDimensionId === dimension.id
-                              ? "bg-accent text-white"
-                              : getProgressColor(progress)
-                          )}
-                        >
-                          {dimension.title}
-                        </button>
-                      );
-                    })}
+                  {getDimensionsByCategory(dimensions, "OWASP ASVS").map((dimension) => {
+                    const progress = calculateDimensionProgress(dimension);
+                    return (
+                      <button
+                        key={dimension.id}
+                        onClick={() => onSelectDimension(dimension.id)}
+                        className={cn(
+                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
+                          selectedDimensionId === dimension.id
+                            ? "bg-accent text-white"
+                            : getProgressColor(progress)
+                        )}
+                      >
+                        {dimension.title}
+                      </button>
+                    );
+                  })}
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -75,25 +81,23 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
               </AccordionTrigger>
               <AccordionContent>
                 <div className="space-y-1">
-                  {dimensions
-                    .filter((d) => d.category === "DSOMM")
-                    .map((dimension) => {
-                      const progress = calculateDimensionProgress(dimension);
-                      return (
-                        <button
-                          key={dimension.id}
-                          onClick={() => onSelectDimension(dimension.id)}
-                          className={cn(
-                            "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
-                            selectedDimensionId === dimension.id
-                              ? "bg-accent text-white"
-                              : getProgressColor(progress)
-                          )}
-                        >
-                          {dimension.title}
-                        </button>
-                      );
-                    })}
+                  {getDimensionsByCategory(dimensions, "DSOMM").map((dimension) => {
+                    const progress = calculateDimensionProgress(dimension);
+                    return (
+                      <button
+                        key={dimension.id}
+                        onClick={() => onSelectDimension(dimension.id)}
+                        className={cn(
+                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
+                          selectedDimensionId === dimension.id
+                            ? "bg-accent text-white"
+                            : getProgressColor(progress)
+                        )}
+                      >
+                        {dimension.title}
+                      </button>
+                    );
+                  })}
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -103,25 +107,23 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
               </AccordionTrigger>
               <AccordionContent>
                 <div className="space-y-1">
-                  {dimensions
-                    .filter((d) => d.category === "MITRE ATT&CK")
-                    .map((dimension) => {
-                      const progress = calculateDimensionProgress(dimension);
-                      return (
-                        <button
-                          key={dimension.id}
-                          onClick={() => onSelectDimension(dimension.id)}
-                          className={cn(
-                            "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
-                            selectedDimensionId === dimension.id
-                              ? "bg-accent text-white"
-                              : getProgressColor(progress)
-                          )}
-                        >
-                          {dimension.title}
-                        </button>
-                      );
-                    })}
+                  {getDimensionsByCategory(dimensions, "MITRE ATT&CK").map((dimension) => {
+                    const progress = calculateDimensionProgress(dimension);
+                    return (
+                      <button
+                        key={dimension.id}
+                        onClick={() => onSelectDimension(dimension.id)}
+                        className={cn(
+                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-sm hover:brightness-95",
+                          selectedDimensionId === dimension.id
+                            ? "bg-accent text-white"
+                            : getProgressColor(progress)
+                        )}
+                      >
+                        {dimension.title}
+                      </button>
+                    );
+                  })}
                 </div>
               </AccordionContent>
             </AccordionItem>
