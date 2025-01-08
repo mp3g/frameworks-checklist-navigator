@@ -13,6 +13,7 @@ export const dimensions: Dimension[] = [
         isCompleted: false,
         remediationProposals: [
           {
+            id: "R01",
             title: "SOAP Web Service",
             category: "OWASP ASVS",
             isCompleted: false,

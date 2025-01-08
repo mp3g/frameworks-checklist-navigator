@@ -1,4 +1,5 @@
 export interface RemediationProposal {
+  id: string;
   title: string;
   category: "OWASP ASVS" | "DSOMM" | "MITRE ATT&CK";
   isCompleted: boolean;
