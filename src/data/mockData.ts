@@ -22,6 +22,17 @@ export const dimensions: Dimension[] = [
               "Verify that XSD schema validation takes place to ensure a properly formed XML document, followed by validation of each input field before any processing of that data takes place.",
               "Verify that the message payload is signed using WS-Security to ensure reliable transport between client and service."
             ]
+          },
+          {
+            id: "R02",
+            title: "REST API Security",
+            category: "DSOMM",
+            isCompleted: false,
+            description: "Implementation of secure REST APIs",
+            mitigation_measures: [
+              "Implement proper authentication mechanisms",
+              "Use HTTPS for all API endpoints"
+            ]
           }
         ]
       }

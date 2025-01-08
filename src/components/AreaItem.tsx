@@ -62,9 +62,9 @@ export const AreaItem = ({
                 View Remediation Proposals
               </AccordionTrigger>
               <AccordionContent>
-                {area.remediationProposals.map((proposal, index) => (
+                {area.remediationProposals.map((proposal) => (
                   <div 
-                    key={index}
+                    key={proposal.id}
                     className="border-l-2 pl-4 mb-4"
                     onMouseEnter={() => handleProposalHover(proposal.mitigation_measures)}
                   >

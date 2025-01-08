@@ -27,8 +27,7 @@ const calculateDimensionProgress = (dimension: Dimension) => {
     0
   );
   const completedProposals = dimension.areas.reduce(
-    (sum, area) =>
-      sum + area.remediationProposals.filter((p) => p.isCompleted).length,
+    (sum, area) => sum + area.remediationProposals.filter((p) => p.isCompleted).length,
     0
   );
   return totalProposals > 0 ? (completedProposals / totalProposals) * 100 : 0;
