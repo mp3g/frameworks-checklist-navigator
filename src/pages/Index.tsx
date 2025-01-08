@@ -16,33 +16,34 @@ const Index = () => {
     (d) => d.id === selectedDimensionId
   );
 
-  const handleToggleComplete = (areaId: string, proposalId?: string) => {
+  const handleToggleComplete = (areaId: string, proposalTitle?: string) => {
     setLocalDimensions((prevDimensions) =>
       prevDimensions.map((dimension) => ({
         ...dimension,
         areas: dimension.areas.map((area) => {
           if (area.id !== areaId) return area;
 
-          if (proposalId) {
-            const updatedProposals = area.remediationProposals.map((proposal) =>
-              proposal.id === proposalId
-                ? { ...proposal, isCompleted: !proposal.isCompleted }
-                : proposal
-            );
-            const allCompleted = updatedProposals.every((p) => p.isCompleted);
+          if (proposalTitle) {
+            // Toggle the specific remediation proposal
+            const updatedProposal = {
+              ...area.remediationProposals,
+              isCompleted: !area.remediationProposals.isCompleted
+            };
+            
             return {
               ...area,
-              isCompleted: allCompleted,
-              remediationProposals: updatedProposals,
+              isCompleted: updatedProposal.isCompleted,
+              remediationProposals: updatedProposal
             };
           } else {
+            // Toggle the entire area and its proposal
             return {
               ...area,
               isCompleted: !area.isCompleted,
-              remediationProposals: area.remediationProposals.map((proposal) => ({
-                ...proposal,
-                isCompleted: !area.isCompleted,
-              })),
+              remediationProposals: {
+                ...area.remediationProposals,
+                isCompleted: !area.isCompleted
+              }
             };
           }
         }),
