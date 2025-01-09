@@ -16,34 +16,39 @@ const Index = () => {
     (d) => d.id === selectedDimensionId
   );
 
-  const handleToggleComplete = (areaId: string, proposalTitle?: string) => {
+  const handleToggleComplete = (areaId: string, proposalId?: string) => {
     setLocalDimensions((prevDimensions) =>
       prevDimensions.map((dimension) => ({
         ...dimension,
         areas: dimension.areas.map((area) => {
           if (area.id !== areaId) return area;
 
-          if (proposalTitle) {
-            // Toggle the specific remediation proposal
-            const updatedProposal = {
-              ...area.remediationProposals,
-              isCompleted: !area.remediationProposals.isCompleted
-            };
+          if (proposalId) {
+            // Toggle specific remediation proposal
+            const updatedProposals = area.remediationProposals.map(proposal => 
+              proposal.id === proposalId 
+                ? { ...proposal, isCompleted: !proposal.isCompleted }
+                : proposal
+            );
+            
+            // Area is completed if all proposals are completed
+            const allProposalsCompleted = updatedProposals.every(p => p.isCompleted);
             
             return {
               ...area,
-              isCompleted: updatedProposal.isCompleted,
-              remediationProposals: updatedProposal
+              isCompleted: allProposalsCompleted,
+              remediationProposals: updatedProposals
             };
           } else {
-            // Toggle the entire area and its proposal
+            // Toggle the entire area and all its proposals
+            const newIsCompleted = !area.isCompleted;
             return {
               ...area,
-              isCompleted: !area.isCompleted,
-              remediationProposals: {
-                ...area.remediationProposals,
-                isCompleted: !area.isCompleted
-              }
+              isCompleted: newIsCompleted,
+              remediationProposals: area.remediationProposals.map(proposal => ({
+                ...proposal,
+                isCompleted: newIsCompleted
+              }))
             };
           }
         }),

@@ -29,16 +29,17 @@ export const validateDimensionData = (data: unknown): ValidationResult => {
           if (!area.title || typeof area.title !== 'string') {
             errors.push(`Dimension ${idx}, Area ${areaIdx}: Missing or invalid title`);
           }
-          if (!area.remediationProposals || typeof area.remediationProposals !== 'object') {
-            errors.push(`Dimension ${idx}, Area ${areaIdx}: Missing or invalid remediationProposals`);
+          if (!Array.isArray(area.remediationProposals)) {
+            errors.push(`Dimension ${idx}, Area ${areaIdx}: remediationProposals must be an array`);
           } else {
-            const proposal = area.remediationProposals;
-            if (!proposal.title || typeof proposal.title !== 'string') {
-              errors.push(`Dimension ${idx}, Area ${areaIdx}: Missing or invalid proposal title`);
-            }
-            if (!Array.isArray(proposal.mitigation_measures)) {
-              errors.push(`Dimension ${idx}, Area ${areaIdx}: Mitigation measures must be an array`);
-            }
+            area.remediationProposals.forEach((proposal: any, proposalIdx: number) => {
+              if (!proposal.title || typeof proposal.title !== 'string') {
+                errors.push(`Dimension ${idx}, Area ${areaIdx}, Proposal ${proposalIdx}: Missing or invalid title`);
+              }
+              if (!Array.isArray(proposal.mitigation_measures)) {
+                errors.push(`Dimension ${idx}, Area ${areaIdx}, Proposal ${proposalIdx}: Mitigation measures must be an array`);
+              }
+            });
           }
         });
       }
@@ -67,14 +68,16 @@ export const normalizeData = (data: any) => {
         title: area.title || 'Untitled Area',
         description: area.description || '',
         isCompleted: Boolean(area.isCompleted),
-        remediationProposals: {
-          title: area.remediationProposals?.title || 'Untitled Proposal',
-          category: area.remediationProposals?.category || 'OWASP ASVS',
-          isCompleted: Boolean(area.remediationProposals?.isCompleted),
-          description: area.remediationProposals?.description || '',
-          mitigation_measures: Array.isArray(area.remediationProposals?.mitigation_measures) ?
-            area.remediationProposals.mitigation_measures : []
-        }
+        remediationProposals: Array.isArray(area.remediationProposals) ? 
+          area.remediationProposals.map((proposal: any) => ({
+            id: proposal.id || String(Math.random()),
+            title: proposal.title || 'Untitled Proposal',
+            category: proposal.category || 'OWASP ASVS',
+            isCompleted: Boolean(proposal.isCompleted),
+            description: proposal.description || '',
+            mitigation_measures: Array.isArray(proposal.mitigation_measures) ?
+              proposal.mitigation_measures : []
+          })) : []
       })) : []
     }));
   } catch (error) {
