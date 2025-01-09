@@ -11,7 +11,7 @@ export const dimensions: Dimension[] = [
         title: "API and Web Service",
         description: "API security refers to the practices and procedures that protect application programming interfaces (APIs) from misuse, malicious bot attacks and other cybersecurity threats.",
         isCompleted: false,
-        remediationProposals: [
+        controls: [
           {
             id: "R01",
             title: "SOAP Web Service",

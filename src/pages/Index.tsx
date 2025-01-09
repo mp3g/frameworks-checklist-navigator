@@ -24,20 +24,20 @@ const Index = () => {
           if (area.id !== areaId) return area;
 
           if (proposalId) {
-            // Toggle specific remediation proposal
-            const updatedProposals = area.remediationProposals.map(proposal => 
+            // Toggle specific security control
+            const updatedControls = area.controls.map(proposal => 
               proposal.id === proposalId 
                 ? { ...proposal, isCompleted: !proposal.isCompleted }
                 : proposal
             );
             
             // Area is completed if all proposals are completed
-            const allProposalsCompleted = updatedProposals.every(p => p.isCompleted);
+            const allControlsCompleted = updatedControls.every(p => p.isCompleted);
             
             return {
               ...area,
-              isCompleted: allProposalsCompleted,
-              remediationProposals: updatedProposals
+              isCompleted: allControlsCompleted,
+              controls: updatedControls
             };
           } else {
             // Toggle the entire area and all its proposals
@@ -45,7 +45,7 @@ const Index = () => {
             return {
               ...area,
               isCompleted: newIsCompleted,
-              remediationProposals: area.remediationProposals.map(proposal => ({
+              controls: area.controls.map(proposal => ({
                 ...proposal,
                 isCompleted: newIsCompleted
               }))

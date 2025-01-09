@@ -29,10 +29,10 @@ export const validateDimensionData = (data: unknown): ValidationResult => {
           if (!area.title || typeof area.title !== 'string') {
             errors.push(`Dimension ${idx}, Area ${areaIdx}: Missing or invalid title`);
           }
-          if (!Array.isArray(area.remediationProposals)) {
-            errors.push(`Dimension ${idx}, Area ${areaIdx}: remediationProposals must be an array`);
+          if (!Array.isArray(area.controls)) {
+            errors.push(`Dimension ${idx}, Area ${areaIdx}: controls must be an array`);
           } else {
-            area.remediationProposals.forEach((proposal: any, proposalIdx: number) => {
+            area.controls.forEach((proposal: any, proposalIdx: number) => {
               if (!proposal.title || typeof proposal.title !== 'string') {
                 errors.push(`Dimension ${idx}, Area ${areaIdx}, Proposal ${proposalIdx}: Missing or invalid title`);
               }
@@ -75,8 +75,8 @@ export const normalizeData = (data: any) => {
         title: area.title || 'Untitled Area',
         description: area.description || '',
         isCompleted: Boolean(area.isCompleted),
-        remediationProposals: Array.isArray(area.remediationProposals) ? 
-          area.remediationProposals.map((proposal: any) => ({
+        controls: Array.isArray(area.controls) ? 
+          area.controls.map((proposal: any) => ({
             id: proposal.id || String(Math.random()),
             title: proposal.title || 'Untitled Proposal',
             category: proposal.category || 'OWASP ASVS',

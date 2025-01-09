@@ -10,16 +10,16 @@ import {
 
 interface AreaItemProps {
   area: Area;
-  onToggleComplete: (id: string, proposalId?: string) => void;
+  onToggleComplete: (id: string, controlId?: string) => void;
 }
 
 export const AreaItem = ({
   area,
   onToggleComplete,
 }: AreaItemProps) => {
-  const completedProposals = area.remediationProposals.filter(p => p.isCompleted).length;
-  const totalProposals = area.remediationProposals.length;
-  const progress = totalProposals > 0 ? (completedProposals / totalProposals) * 100 : 0;
+  const completedControls = area.controls.filter(p => p.isCompleted).length;
+  const totalControls = area.controls.length;
+  const progress = totalControls > 0 ? (completedControls / totalControls) * 100 : 0;
 
   return (
     <div className="border rounded-lg p-4 mb-4 bg-white shadow-sm">
@@ -32,7 +32,7 @@ export const AreaItem = ({
         <div className="flex-1">
           <h3 className="text-lg font-semibold mb-2">{area.title}</h3>
           {area.description && area.description !== "nan" && (
-            <p className="text-gray-600 mb-4">{area.description}</p>
+            <p className="text-gray-600 text-sm">{area.description}</p>
           )}
           
           <div className="mb-4">
@@ -46,29 +46,29 @@ export const AreaItem = ({
           <Accordion type="single" collapsible>
             <AccordionItem value="remediation">
               <AccordionTrigger className="text-sm text-accent hover:text-accent/80">
-                View Remediation Proposals ({completedProposals}/{totalProposals})
+                View Security Controls ({completedControls}/{totalControls})
               </AccordionTrigger>
               <AccordionContent>
                 <div className="border-l-2 pl-4 mb-4 space-y-4">
-                  {area.remediationProposals.map((proposal) => (
-                    <div key={proposal.id} className="flex items-start gap-3">
+                  {area.controls.map((control) => (
+                    <div key={control.id} className="flex items-start gap-3">
                       <Checkbox
-                        checked={proposal.isCompleted}
-                        onCheckedChange={() => onToggleComplete(area.id, proposal.id)}
+                        checked={control.isCompleted}
+                        onCheckedChange={() => onToggleComplete(area.id, control.id)}
                         className="mt-1"
                       />
                       <div>
-                        <div className="text-gray-800 font-medium">{proposal.title}</div>
-                        {proposal.description && proposal.description !== "nan" && (
-                          <div className="text-sm text-gray-600 mt-1">{proposal.description}</div>
+                        <div className="text-gray-800 font-medium">{control.title}</div>
+                        {control.description && control.description !== "nan" && (
+                          <div className="text-sm text-gray-600 mt-1">{control.description}</div>
                         )}
-                        <div className="text-xs text-accent mt-1">Category: {proposal.category}</div>
+                        <div className="text-xs text-accent mt-1">Category: {control.category}</div>
                         
-                        {proposal.mitigation_measures && proposal.mitigation_measures.length > 0 && (
+                        {control.mitigation_measures && control.mitigation_measures.length > 0 && (
                           <div className="mt-3">
                             <div className="text-sm font-medium mb-1">Mitigation Measures:</div>
                             <ul className="list-disc pl-4">
-                              {proposal.mitigation_measures.map((measure, index) => (
+                              {control.mitigation_measures.map((measure, index) => (
                                 <li key={index} className="text-sm text-gray-600">{measure}</li>
                               ))}
                             </ul>

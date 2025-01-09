@@ -25,11 +25,11 @@ const calculateDimensionProgress = (dimension: Dimension) => {
   const totalAreas = dimension.areas.length;
   const completedAreas = dimension.areas.reduce(
     (sum, area) => {
-      const completedProposals = area.remediationProposals.filter(
-        proposal => proposal.isCompleted
+      const completedControls = area.controls.filter(
+        control => control.isCompleted
       ).length;
-      const totalProposals = area.remediationProposals.length;
-      return sum + (totalProposals > 0 ? completedProposals / totalProposals : 0);
+      const totalControls = area.controls.length;
+      return sum + (totalControls > 0 ? completedControls / totalControls : 0);
     },
     0
   );
@@ -38,28 +38,28 @@ const calculateDimensionProgress = (dimension: Dimension) => {
 
 const getDimensionsByCategory = (dimensions: Dimension[], category: string) => {
   return dimensions.filter((dimension) => {
-    // Check if any area in the dimension has at least one proposal with the specified category
+    // Check if any area in the dimension has at least one control with the specified category
     const hasCategory = dimension.areas.some((area) => 
-      area.remediationProposals.some((proposal) => proposal.category === category)
+      area.controls.some((control) => control.category === category)
     );
     
-    // Calculate the percentage of proposals in this category
+    // Calculate the percentage of controls in this category
     if (hasCategory) {
-      const totalProposals = dimension.areas.reduce(
-        (sum, area) => sum + area.remediationProposals.length,
+      const totalControls = dimension.areas.reduce(
+        (sum, area) => sum + area.controls.length,
         0
       );
-      const categoryProposals = dimension.areas.reduce(
+      const categoryControls = dimension.areas.reduce(
         (sum, area) => 
           sum + 
-          area.remediationProposals.filter(
-            (proposal) => proposal.category === category
+          area.controls.filter(
+            (control) => control.category === category
           ).length,
         0
       );
       
-      // Only include dimensions where at least 50% of proposals belong to this category
-      return categoryProposals / totalProposals >= 0.5;
+      // Only include dimensions where at least 50% of controls belong to this category
+      return categoryControls / totalControls >= 0.5;
     }
     return false;
   });
@@ -70,7 +70,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
     <div className="w-64 bg-white border-r shadow-sm">
       <ScrollArea className="h-screen">
         <div className="p-4">
-          <h1 className="text-lg font-bold text-primary mb-4">Dimensions</h1>
+          <h1 className="text-lg font-bold text-primary mb-4">CyberSec Frameworks</h1>
           <Accordion type="multiple" defaultValue={["owasp", "dsomm", "mitre"]} className="space-y-2">
             <AccordionItem value="owasp">
               <AccordionTrigger className="text-sm font-semibold">
