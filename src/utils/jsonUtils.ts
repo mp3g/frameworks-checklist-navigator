@@ -36,8 +36,15 @@ export const validateDimensionData = (data: unknown): ValidationResult => {
               if (!proposal.title || typeof proposal.title !== 'string') {
                 errors.push(`Dimension ${idx}, Area ${areaIdx}, Proposal ${proposalIdx}: Missing or invalid title`);
               }
-              if (!Array.isArray(proposal.mitigation_measures)) {
-                errors.push(`Dimension ${idx}, Area ${areaIdx}, Proposal ${proposalIdx}: Mitigation measures must be an array`);
+              // Ensure mitigation_measures is always an array, even if it's a single string
+              if (proposal.mitigation_measures) {
+                if (typeof proposal.mitigation_measures === 'string') {
+                  proposal.mitigation_measures = [proposal.mitigation_measures];
+                } else if (!Array.isArray(proposal.mitigation_measures)) {
+                  errors.push(`Dimension ${idx}, Area ${areaIdx}, Proposal ${proposalIdx}: Mitigation measures must be an array`);
+                }
+              } else {
+                proposal.mitigation_measures = [];
               }
             });
           }
@@ -75,8 +82,11 @@ export const normalizeData = (data: any) => {
             category: proposal.category || 'OWASP ASVS',
             isCompleted: Boolean(proposal.isCompleted),
             description: proposal.description || '',
-            mitigation_measures: Array.isArray(proposal.mitigation_measures) ?
-              proposal.mitigation_measures : []
+            mitigation_measures: Array.isArray(proposal.mitigation_measures) ? 
+              proposal.mitigation_measures :
+              typeof proposal.mitigation_measures === 'string' ? 
+                [proposal.mitigation_measures] : 
+                []
           })) : []
       })) : []
     }));
