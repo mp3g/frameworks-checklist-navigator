@@ -37,13 +37,32 @@ const calculateDimensionProgress = (dimension: Dimension) => {
 };
 
 const getDimensionsByCategory = (dimensions: Dimension[], category: string) => {
-  return dimensions.filter((dimension) => 
-    dimension.areas.some((area) => 
-      area.remediationProposals.some(proposal => 
-        proposal.category === category
-      )
-    )
-  );
+  return dimensions.filter((dimension) => {
+    // Check if any area in the dimension has at least one proposal with the specified category
+    const hasCategory = dimension.areas.some((area) => 
+      area.remediationProposals.some((proposal) => proposal.category === category)
+    );
+    
+    // Calculate the percentage of proposals in this category
+    if (hasCategory) {
+      const totalProposals = dimension.areas.reduce(
+        (sum, area) => sum + area.remediationProposals.length,
+        0
+      );
+      const categoryProposals = dimension.areas.reduce(
+        (sum, area) => 
+          sum + 
+          area.remediationProposals.filter(
+            (proposal) => proposal.category === category
+          ).length,
+        0
+      );
+      
+      // Only include dimensions where at least 50% of proposals belong to this category
+      return categoryProposals / totalProposals >= 0.5;
+    }
+    return false;
+  });
 };
 
 export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: SidebarProps) => {
