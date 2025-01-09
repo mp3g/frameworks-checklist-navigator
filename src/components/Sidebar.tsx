@@ -65,8 +65,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                             : ""
                         )}
                       >
-                        <div className="text-sm mb-0.5">{dimension.title}</div>
-                        <div className="text-xs text-gray-600">{dimension.description}</div>
+                        <div className="text-sm">{dimension.title}</div>
                       </button>
                     );
                   })}
@@ -93,8 +92,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                             : ""
                         )}
                       >
-                        <div className="text-sm mb-0.5">{dimension.title}</div>
-                        <div className="text-xs text-gray-600">{dimension.description}</div>
+                        <div className="text-sm">{dimension.title}</div>
                       </button>
                     );
                   })}
@@ -121,8 +119,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                             : ""
                         )}
                       >
-                        <div className="text-sm mb-0.5">{dimension.title}</div>
-                        <div className="text-xs text-gray-600">{dimension.description}</div>
+                        <div className="text-sm">{dimension.title}</div>
                       </button>
                     );
                   })}

@@ -13,8 +13,8 @@ export const DimensionContent = ({
   return (
     <div className="p-6">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold mb-2">{dimension.title}</h2>
-        <p className="text-gray-600">{dimension.description}</p>
+        <h2 className="text-2xl font-bold mb-3">{dimension.title}</h2>
+        <p className="text-gray-600 text-sm">{dimension.description}</p>
       </div>
       
       <div className="space-y-4 max-h-[calc(100vh-200px)] overflow-y-auto pr-2">
