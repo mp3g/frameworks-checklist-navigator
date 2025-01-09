@@ -5,9 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   server: {
-    host: true, // Listen on all addresses
+    host: true,
     port: 8080,
-    strictPort: true, // Fail if port is already in use
+    strictPort: true,
   },
   plugins: [
     react(),
@@ -17,5 +17,10 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  preview: {
+    port: 8080,
+    strictPort: true,
+    host: true,
   },
 }));
