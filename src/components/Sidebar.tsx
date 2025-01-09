@@ -24,7 +24,13 @@ const getProgressColor = (progress: number) => {
 const calculateDimensionProgress = (dimension: Dimension) => {
   const totalAreas = dimension.areas.length;
   const completedAreas = dimension.areas.reduce(
-    (sum, area) => sum + (area.remediationProposals.isCompleted ? 1 : 0),
+    (sum, area) => {
+      const completedProposals = area.remediationProposals.filter(
+        proposal => proposal.isCompleted
+      ).length;
+      const totalProposals = area.remediationProposals.length;
+      return sum + (totalProposals > 0 ? completedProposals / totalProposals : 0);
+    },
     0
   );
   return totalAreas > 0 ? (completedAreas / totalAreas) * 100 : 0;
@@ -33,7 +39,9 @@ const calculateDimensionProgress = (dimension: Dimension) => {
 const getDimensionsByCategory = (dimensions: Dimension[], category: string) => {
   return dimensions.filter((dimension) => 
     dimension.areas.some((area) => 
-      area.remediationProposals.category === category
+      area.remediationProposals.some(proposal => 
+        proposal.category === category
+      )
     )
   );
 };
