@@ -4,7 +4,7 @@ import { DimensionContent } from "@/components/DimensionContent";
 import { Sidebar } from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Download, Upload } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { validateDimensionData, normalizeData } from "@/utils/jsonUtils";
 
 const Index = () => {
@@ -23,6 +23,30 @@ const Index = () => {
   };
 
   const handleToggleComplete = (areaId: string, proposalId?: string) => {
+    // Find all dimensions that contain this area
+    const affectedDimensions = localDimensions.filter(dimension =>
+      dimension.areas.some(area => area.id === areaId)
+    );
+
+    // Get all unique categories where this area appears
+    const affectedCategories = new Set(
+      affectedDimensions.flatMap(dimension =>
+        dimension.areas
+          .find(area => area.id === areaId)?.controls
+          .map(control => control.category) || []
+      )
+    );
+
+    // Remove the current category to only show toast for other categories
+    affectedCategories.delete(selectedCategory);
+
+    if (affectedCategories.size > 0) {
+      toast({
+        title: "Area Updated",
+        description: `The area has also been updated in ${Array.from(affectedCategories).join(", ")}`,
+      });
+    }
+
     setLocalDimensions((prevDimensions) =>
       prevDimensions.map((dimension) => ({
         ...dimension,
