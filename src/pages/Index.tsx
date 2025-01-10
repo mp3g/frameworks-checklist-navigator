@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Download, Upload } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { validateDimensionData, normalizeData } from "@/utils/jsonUtils";
+import { RemediationProposal } from "@/types/attributes";
 
 const Index = () => {
   const [selectedDimensionId, setSelectedDimensionId] = useState(initialDimensions[0].id);
-  const [selectedCategory, setSelectedCategory] = useState<string>("OWASP ASVS");
+  const [selectedCategory, setSelectedCategory] = useState<RemediationProposal["category"]>("OWASP ASVS");
   const [localDimensions, setLocalDimensions] = useState(initialDimensions);
   const { toast } = useToast();
 
@@ -17,7 +18,7 @@ const Index = () => {
     (d) => d.id === selectedDimensionId
   );
 
-  const handleSelectDimension = (id: string, category: string) => {
+  const handleSelectDimension = (id: string, category: RemediationProposal["category"]) => {
     setSelectedDimensionId(id);
     setSelectedCategory(category);
   };
