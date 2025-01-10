@@ -37,32 +37,11 @@ const calculateDimensionProgress = (dimension: Dimension) => {
 };
 
 const getDimensionsByCategory = (dimensions: Dimension[], category: string) => {
-  return dimensions.filter((dimension) => {
-    // Check if any area in the dimension has at least one control with the specified category
-    const hasCategory = dimension.areas.some((area) => 
+  return dimensions.filter((dimension) => 
+    dimension.areas.some((area) => 
       area.controls.some((control) => control.category === category)
-    );
-    
-    // Calculate the percentage of controls in this category
-    if (hasCategory) {
-      const totalControls = dimension.areas.reduce(
-        (sum, area) => sum + area.controls.length,
-        0
-      );
-      const categoryControls = dimension.areas.reduce(
-        (sum, area) => 
-          sum + 
-          area.controls.filter(
-            (control) => control.category === category
-          ).length,
-        0
-      );
-      
-      // Only include dimensions where at least 50% of controls belong to this category
-      return categoryControls / totalControls >= 0.5;
-    }
-    return false;
-  });
+    )
+  );
 };
 
 export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: SidebarProps) => {
