@@ -56,7 +56,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                 OWASP ASVS
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-1">
+                <div className="space-y-1 flex flex-col justify-between">
                   {getDimensionsByCategory(dimensions, "OWASP ASVS").map((dimension) => {
                     const progress = calculateDimensionProgress(dimension);
                     return (
@@ -83,7 +83,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                 DSOMM
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-1">
+                <div className="space-y-1 flex flex-col justify-between">
                   {getDimensionsByCategory(dimensions, "DSOMM").map((dimension) => {
                     const progress = calculateDimensionProgress(dimension);
                     return (
@@ -110,7 +110,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                 MITRE ATT&CK
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-1">
+                <div className="space-y-1 flex flex-col justify-between">
                   {getDimensionsByCategory(dimensions, "MITRE ATT&CK").map((dimension) => {
                     const progress = calculateDimensionProgress(dimension);
                     return (

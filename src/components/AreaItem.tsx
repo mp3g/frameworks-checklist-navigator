@@ -32,7 +32,7 @@ export const AreaItem = ({
         <div className="flex-1">
           <h3 className="text-lg font-semibold mb-2">{area.title}</h3>
           {area.description && area.description !== "nan" && (
-            <p className="text-gray-600 text-sm">{area.description}</p>
+            <p className="text-gray-600 text-sm text-justify">{area.description}</p>
           )}
           
           <div className="mb-4">
@@ -60,7 +60,7 @@ export const AreaItem = ({
                       <div>
                         <div className="text-gray-800 font-medium">{control.title}</div>
                         {control.description && control.description !== "nan" && (
-                          <div className="text-sm text-gray-600 mt-1">{control.description}</div>
+                          <div className="text-sm text-gray-600 mt-1 text-justify">{control.description}</div>
                         )}
                         <div className="text-xs text-accent mt-1">Category: {control.category}</div>
                         
@@ -69,7 +69,7 @@ export const AreaItem = ({
                             <div className="text-sm font-medium mb-1">Mitigation Measures:</div>
                             <ul className="list-disc pl-4">
                               {control.mitigation_measures.map((measure, index) => (
-                                <li key={index} className="text-sm text-gray-600">{measure}</li>
+                                <li key={index} className="text-sm text-gray-600 text-justify">{measure}</li>
                               ))}
                             </ul>
                           </div>
