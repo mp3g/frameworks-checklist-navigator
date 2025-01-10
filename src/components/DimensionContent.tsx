@@ -12,7 +12,6 @@ export const DimensionContent = ({
   selectedCategory,
   onToggleComplete,
 }: DimensionContentProps) => {
-  // Filter areas to only include those with controls matching the selected category
   const filteredAreas = dimension.areas.map(area => ({
     ...area,
     controls: area.controls.filter(control => control.category === selectedCategory)
@@ -21,8 +20,10 @@ export const DimensionContent = ({
   return (
     <div className="p-6">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold mb-3">{dimension.title}</h2>
-        <p className="text-gray-600 text-sm">{dimension.description}</p>
+        <h2 className="text-2xl font-bold text-primary mb-2">{dimension.title}</h2>
+        {dimension.description && dimension.description !== "nan" && (
+          <p className="text-gray-600 text-justify">{dimension.description}</p>
+        )}
       </div>
       
       <div className="space-y-4 max-h-[calc(100vh-200px)] overflow-y-auto pr-2">
