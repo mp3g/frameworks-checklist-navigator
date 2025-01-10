@@ -9,12 +9,18 @@ import { validateDimensionData, normalizeData } from "@/utils/jsonUtils";
 
 const Index = () => {
   const [selectedDimensionId, setSelectedDimensionId] = useState(initialDimensions[0].id);
+  const [selectedCategory, setSelectedCategory] = useState<string>("OWASP ASVS");
   const [localDimensions, setLocalDimensions] = useState(initialDimensions);
   const { toast } = useToast();
 
   const selectedDimension = localDimensions.find(
     (d) => d.id === selectedDimensionId
   );
+
+  const handleSelectDimension = (id: string, category: string) => {
+    setSelectedDimensionId(id);
+    setSelectedCategory(category);
+  };
 
   const handleToggleComplete = (areaId: string, proposalId?: string) => {
     setLocalDimensions((prevDimensions) =>
@@ -126,7 +132,7 @@ const Index = () => {
       <Sidebar
         dimensions={localDimensions}
         selectedDimensionId={selectedDimensionId}
-        onSelectDimension={setSelectedDimensionId}
+        onSelectDimension={handleSelectDimension}
       />
       <div className="flex-1">
         {selectedDimension && (
@@ -160,6 +166,7 @@ const Index = () => {
             </div>
             <DimensionContent
               dimension={selectedDimension}
+              selectedCategory={selectedCategory}
               onToggleComplete={handleToggleComplete}
             />
           </>
