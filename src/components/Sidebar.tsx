@@ -64,7 +64,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                         key={dimension.id}
                         onClick={() => onSelectDimension(dimension.id, "OWASP ASVS")}
                         className={cn(
-                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-xs hover:brightness-95",
+                          "w-full text-left px-4 py-2 rounded-lg mt-1 transition-colors text-xs hover:brightness-95",
                           getProgressColor(progress),
                           selectedDimensionId === dimension.id
                             ? "ring-2 ring-accent ring-opacity-50"
@@ -91,7 +91,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                         key={dimension.id}
                         onClick={() => onSelectDimension(dimension.id, "DSOMM")}
                         className={cn(
-                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-xs hover:brightness-95",
+                          "w-full text-left px-4 py-2 rounded-lg mt-1 transition-colors text-xs hover:brightness-95",
                           getProgressColor(progress),
                           selectedDimensionId === dimension.id
                             ? "ring-2 ring-accent ring-opacity-50"
@@ -118,7 +118,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                         key={dimension.id}
                         onClick={() => onSelectDimension(dimension.id, "MITRE ATT&CK")}
                         className={cn(
-                          "w-full text-left px-4 py-2 rounded-lg mb-2 transition-colors text-xs hover:brightness-95",
+                          "w-full text-left px-4 py-2 rounded-lg mt-1 transition-colors text-xs hover:brightness-95",
                           getProgressColor(progress),
                           selectedDimensionId === dimension.id
                             ? "ring-2 ring-accent ring-opacity-50"
