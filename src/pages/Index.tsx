@@ -181,7 +181,7 @@ const Index = () => {
         {selectedDimension && (
           <>
             <div className="p-4 border-b flex justify-between items-center">
-              <div>
+              <div className="ml-4">
                 <HelpDialog />
               </div>
               <div className="flex space-x-2">
