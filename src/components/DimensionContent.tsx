@@ -1,9 +1,10 @@
 import { Dimension } from "@/types/attributes";
 import { AreaItem } from "./AreaItem";
+import { HelpDialog } from "./HelpDialog";
 
 interface DimensionContentProps {
   dimension: Dimension;
-  selectedCategory: string;
+  selectedCategory: "OWASP ASVS" | "DSOMM" | "MITRE ATT&CK";
   onToggleComplete: (areaId: string, proposalId?: string) => void;
 }
 
@@ -12,27 +13,31 @@ export const DimensionContent = ({
   selectedCategory,
   onToggleComplete,
 }: DimensionContentProps) => {
-  // Filter areas to only include those with controls matching the selected category
+  // Filter areas to only show controls matching the selected category
   const filteredAreas = dimension.areas.map(area => ({
     ...area,
     controls: area.controls.filter(control => control.category === selectedCategory)
   })).filter(area => area.controls.length > 0);
 
   return (
-    <div className="p-6">
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold mb-3">{dimension.title}</h2>
-        <p className="text-gray-600 text-sm">{dimension.description}</p>
-      </div>
-      
-      <div className="space-y-4 max-h-[calc(100vh-200px)] overflow-y-auto pr-2">
-        {filteredAreas.map((area) => (
-          <AreaItem
-            key={area.id}
-            area={area}
-            onToggleComplete={onToggleComplete}
-          />
-        ))}
+    <div className="relative p-6 max-w-5xl mx-auto">
+      <HelpDialog />
+      <div className="mt-8">
+        <h1 className="text-xl font-semibold mb-2">{dimension.title}</h1>
+        {dimension.description && (
+          <p className="text-sm text-gray-600 mb-6 text-justify">
+            {dimension.description}
+          </p>
+        )}
+        <div className="space-y-6">
+          {filteredAreas.map((area) => (
+            <AreaItem
+              key={area.id}
+              area={area}
+              onToggleComplete={onToggleComplete}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
