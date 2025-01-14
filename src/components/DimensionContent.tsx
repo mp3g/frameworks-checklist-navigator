@@ -1,6 +1,5 @@
 import { Dimension } from "@/types/attributes";
 import { AreaItem } from "./AreaItem";
-import { HelpDialog } from "./HelpDialog";
 
 interface DimensionContentProps {
   dimension: Dimension;
@@ -21,7 +20,6 @@ export const DimensionContent = ({
 
   return (
     <div className="relative p-6 max-w-5xl mx-auto">
-      <HelpDialog />
       <div className="mt-8">
         <h1 className="text-xl font-semibold mb-2">{dimension.title}</h1>
         {dimension.description && (

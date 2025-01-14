@@ -7,6 +7,7 @@ import { Download, Upload } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { validateDimensionData, normalizeData } from "@/utils/jsonUtils";
 import { RemediationProposal } from "@/types/attributes";
+import { HelpDialog } from "@/components/HelpDialog";
 
 const Index = () => {
   const [selectedDimensionId, setSelectedDimensionId] = useState(initialDimensions[0].id);
@@ -162,32 +163,37 @@ const Index = () => {
       <div className="flex-1">
         {selectedDimension && (
           <>
-            <div className="p-4 border-b flex justify-end space-x-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleExport}
-                className="flex items-center gap-2"
-              >
-                <Download className="h-4 w-4" />
-                Export
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex items-center gap-2"
-                onClick={() => document.getElementById('import-input')?.click()}
-              >
-                <Upload className="h-4 w-4" />
-                Import
-              </Button>
-              <input
-                id="import-input"
-                type="file"
-                accept=".json"
-                onChange={handleImport}
-                className="hidden"
-              />
+            <div className="p-4 border-b flex justify-between items-center">
+              <div>
+                <HelpDialog />
+              </div>
+              <div className="flex space-x-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleExport}
+                  className="flex items-center gap-2"
+                >
+                  <Download className="h-4 w-4" />
+                  Export
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center gap-2"
+                  onClick={() => document.getElementById('import-input')?.click()}
+                >
+                  <Upload className="h-4 w-4" />
+                  Import
+                </Button>
+                <input
+                  id="import-input"
+                  type="file"
+                  accept=".json"
+                  onChange={handleImport}
+                  className="hidden"
+                />
+              </div>
             </div>
             <DimensionContent
               dimension={selectedDimension}
