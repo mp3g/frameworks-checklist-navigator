@@ -16,7 +16,7 @@ export const HelpDialog = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-4 left-4 h-8 w-8"
+          className="top-3 left-3 right-3 h-8 w-8"
         >
           <HelpCircle className="h-5 w-5" />
         </Button>

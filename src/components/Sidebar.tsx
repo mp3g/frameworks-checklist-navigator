@@ -49,7 +49,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
     <div className="w-64 bg-white border-r shadow-sm">
       <ScrollArea className="h-screen">
         <div className="p-4">
-          <h1 className="text-lg font-bold text-primary mb-4">CyberSec Frameworks</h1>
+          <h1 className="text-lg font-bold text-primary mb-4">CyberSec Frameworks Assessment App</h1>
           <Accordion type="multiple" defaultValue={["owasp", "dsomm", "mitre"]} className="space-y-2">
             <AccordionItem value="owasp">
               <AccordionTrigger className="text-sm font-semibold">
