@@ -46,6 +46,10 @@ export const validateDimensionData = (data: unknown): ValidationResult => {
               } else {
                 proposal.mitigation_measures = [];
               }
+              // Validate audit field if present
+              if (proposal.audit !== undefined && typeof proposal.audit !== 'string') {
+                errors.push(`Dimension ${idx}, Area ${areaIdx}, Proposal ${proposalIdx}: Audit must be a string if present`);
+              }
             });
           }
         });
@@ -86,7 +90,9 @@ export const normalizeData = (data: any) => {
               proposal.mitigation_measures :
               typeof proposal.mitigation_measures === 'string' ? 
                 [proposal.mitigation_measures] : 
-                []
+                [],
+            // Only include audit if it exists and is a string
+            ...(proposal.audit && typeof proposal.audit === 'string' ? { audit: proposal.audit } : {})
           })) : []
       })) : []
     }));

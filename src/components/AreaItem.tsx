@@ -34,6 +34,7 @@ export const AreaItem = ({
   const { toast } = useToast();
   const [auditText, setAuditText] = useState("");
   const [selectedControlId, setSelectedControlId] = useState<string | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const completedControls = area.controls.filter(p => p.isCompleted).length;
   const totalControls = area.controls.length;
@@ -42,6 +43,7 @@ export const AreaItem = ({
   const handleSaveAudit = () => {
     if (selectedControlId) {
       onUpdateAudit(area.id, selectedControlId, auditText);
+      setDialogOpen(false); // Close dialog after saving
       toast({
         title: "Audit Saved",
         description: "Your audit notes have been saved successfully.",
@@ -88,14 +90,17 @@ export const AreaItem = ({
                       <div className="flex-1">
                         <div className="flex items-start justify-between gap-2">
                           <div className="text-gray-800 font-medium">{control.title}</div>
-                          <Dialog onOpenChange={(open) => {
-                            if (open) {
-                              setSelectedControlId(control.id);
-                              setAuditText(control.audit || "");
-                            }
-                          }}>
+                          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                             <DialogTrigger asChild>
-                              <Button variant="ghost" size="sm" className="h-6">
+                              <Button 
+                                variant="ghost" 
+                                size="sm" 
+                                className="h-6"
+                                onClick={() => {
+                                  setSelectedControlId(control.id);
+                                  setAuditText(control.audit || "");
+                                }}
+                              >
                                 <ClipboardEdit className="h-4 w-4" />
                               </Button>
                             </DialogTrigger>
