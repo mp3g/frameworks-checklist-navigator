@@ -5,6 +5,7 @@ export interface RemediationProposal {
   isCompleted: boolean;
   description: string;
   mitigation_measures: string[];
+  audit?: string;
 }
 
 export interface Area {

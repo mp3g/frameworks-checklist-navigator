@@ -24,6 +24,23 @@ const Index = () => {
     setSelectedCategory(category);
   };
 
+  const handleUpdateAudit = (areaId: string, controlId: string, audit: string) => {
+    setLocalDimensions((prevDimensions) =>
+      prevDimensions.map((dimension) => ({
+        ...dimension,
+        areas: dimension.areas.map((area) => {
+          if (area.id !== areaId) return area;
+          return {
+            ...area,
+            controls: area.controls.map((control) =>
+              control.id === controlId ? { ...control, audit } : control
+            ),
+          };
+        }),
+      }))
+    );
+  };
+
   const handleToggleComplete = (areaId: string, proposalId?: string) => {
     // Find all dimensions that contain this area
     const affectedDimensions = localDimensions.filter(dimension =>
@@ -199,6 +216,7 @@ const Index = () => {
               dimension={selectedDimension}
               selectedCategory={selectedCategory}
               onToggleComplete={handleToggleComplete}
+              onUpdateAudit={handleUpdateAudit}
             />
           </>
         )}

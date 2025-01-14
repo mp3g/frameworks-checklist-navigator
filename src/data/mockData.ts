@@ -21,7 +21,8 @@ export const dimensions: Dimension[] = [
             mitigation_measures: [
               "Verify that XSD schema validation takes place to ensure a properly formed XML document, followed by validation of each input field before any processing of that data takes place.",
               "Verify that the message payload is signed using WS-Security to ensure reliable transport between client and service."
-            ]
+            ],
+            audit: ""
           }
         ]
       }

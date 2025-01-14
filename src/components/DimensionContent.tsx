@@ -5,12 +5,14 @@ interface DimensionContentProps {
   dimension: Dimension;
   selectedCategory: "OWASP ASVS" | "DSOMM" | "MITRE ATT&CK";
   onToggleComplete: (areaId: string, proposalId?: string) => void;
+  onUpdateAudit: (areaId: string, controlId: string, audit: string) => void;
 }
 
 export const DimensionContent = ({
   dimension,
   selectedCategory,
   onToggleComplete,
+  onUpdateAudit,
 }: DimensionContentProps) => {
   // Filter areas to only show controls matching the selected category
   const filteredAreas = dimension.areas.map(area => ({
@@ -33,6 +35,7 @@ export const DimensionContent = ({
               key={area.id}
               area={area}
               onToggleComplete={onToggleComplete}
+              onUpdateAudit={onUpdateAudit}
             />
           ))}
         </div>
