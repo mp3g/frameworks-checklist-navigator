@@ -34,6 +34,7 @@ export const AreaItem = ({
   const { toast } = useToast();
   const [auditText, setAuditText] = useState("");
   const [selectedControlId, setSelectedControlId] = useState<string | null>(null);
+  const [selectedControlTitle, setSelectedControlTitle] = useState<string>("");
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const completedControls = area.controls.filter(p => p.isCompleted).length;
@@ -43,7 +44,7 @@ export const AreaItem = ({
   const handleSaveAudit = () => {
     if (selectedControlId) {
       onUpdateAudit(area.id, selectedControlId, auditText);
-      setDialogOpen(false); // Close dialog after saving
+      setDialogOpen(false);
       toast({
         title: "Audit Saved",
         description: "Your audit notes have been saved successfully.",
@@ -90,7 +91,7 @@ export const AreaItem = ({
                       <div className="flex-1">
                         <div className="flex items-start justify-between gap-2">
                           <div className="text-base font-medium">{control.title}</div>
-                          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                          <Dialog open={dialogOpen && selectedControlId === control.id} onOpenChange={setDialogOpen}>
                             <DialogTrigger asChild>
                               <Button 
                                 variant="ghost" 
@@ -98,6 +99,7 @@ export const AreaItem = ({
                                 className="h-6"
                                 onClick={() => {
                                   setSelectedControlId(control.id);
+                                  setSelectedControlTitle(control.title);
                                   setAuditText(control.audit || "");
                                 }}
                               >
@@ -106,7 +108,7 @@ export const AreaItem = ({
                             </DialogTrigger>
                             <DialogContent>
                               <DialogHeader>
-                                <DialogTitle>Audit Notes - {control.title}</DialogTitle>
+                                <DialogTitle>Audit Notes - {selectedControlTitle}</DialogTitle>
                               </DialogHeader>
                               <div className="space-y-4 py-4">
                                 <Textarea
@@ -125,7 +127,6 @@ export const AreaItem = ({
                         {control.description && control.description !== "nan" && (
                           <div className="text-sm text-gray-600 mt-1 text-justify">{control.description}</div>
                         )}
-                        {/*<div className="text-xs text-accent">Category: {control.category}</div>*/}
                         
                         {control.mitigation_measures && control.mitigation_measures.length > 0 && (
                           <div className="mt-2">
