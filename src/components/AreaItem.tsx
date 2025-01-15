@@ -52,7 +52,7 @@ export const AreaItem = ({
   };
 
   return (
-    <div className="border rounded-lg p-4 mb-4 bg-white shadow-sm">
+    <div className="border rounded-lg p-6 mb-4 bg-white shadow-sm">
       <div className="flex items-start gap-4">
         <Checkbox
           checked={area.isCompleted}
@@ -60,14 +60,14 @@ export const AreaItem = ({
           className="mt-1"
         />
         <div className="flex-1">
-          <h3 className="text-lg font-semibold mb-2">{area.title}</h3>
+          <h3 className="text-lg font-semibold mb-1">{area.title}</h3>
           {area.description && area.description !== "nan" && (
             <p className="text-gray-600 text-sm text-justify">{area.description}</p>
           )}
           
-          <div className="mb-4">
+          <div>
             <div className="flex justify-between text-sm text-gray-600 mb-2">
-              <span>Progress</span>
+              <span className="text-gray-600 mt-1 text-xs">Progress</span>
               <span>{Math.round(progress)}%</span>
             </div>
             <Progress value={progress} className="h-2" />
@@ -89,7 +89,7 @@ export const AreaItem = ({
                       />
                       <div className="flex-1">
                         <div className="flex items-start justify-between gap-2">
-                          <div className="text-gray-800 font-medium">{control.title}</div>
+                          <div className="text-base font-medium">{control.title}</div>
                           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                             <DialogTrigger asChild>
                               <Button 
@@ -125,12 +125,12 @@ export const AreaItem = ({
                         {control.description && control.description !== "nan" && (
                           <div className="text-sm text-gray-600 mt-1 text-justify">{control.description}</div>
                         )}
-                        <div className="text-xs text-accent mt-1">Category: {control.category}</div>
+                        {/*<div className="text-xs text-accent">Category: {control.category}</div>*/}
                         
                         {control.mitigation_measures && control.mitigation_measures.length > 0 && (
-                          <div className="mt-3">
-                            <div className="text-sm font-medium mb-1">Mitigation Measures:</div>
-                            <ul className="list-disc pl-4">
+                          <div className="mt-2">
+                            <div className="text-accent mb-1 font-medium">Mitigation Measures:</div>
+                            <ul className="list-disc pl-4 mr-3">
                               {control.mitigation_measures.map((measure, index) => (
                                 <li key={index} className="text-sm text-gray-600 text-justify">{measure}</li>
                               ))}

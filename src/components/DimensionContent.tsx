@@ -21,15 +21,15 @@ export const DimensionContent = ({
   })).filter(area => area.controls.length > 0);
 
   return (
-    <div className="relative p-6 max-w-5xl mx-auto">
-      <div className="mt-8">
-        <h1 className="text-xl font-semibold mb-2">{dimension.title}</h1>
+    <div className="relative p-6 mx-auto">
+      <div>
+        <h1 className="text-xl font-semibold mb-3">{dimension.title}</h1>
         {dimension.description && (
           <p className="text-sm text-gray-600 mb-6 text-justify">
             {dimension.description}
           </p>
         )}
-        <div className="space-y-6">
+        <div className="space-y-3 max-w-7xl mx-auto">
           {filteredAreas.map((area) => (
             <AreaItem
               key={area.id}

@@ -46,11 +46,11 @@ const getDimensionsByCategory = (dimensions: Dimension[], category: string) => {
 
 export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: SidebarProps) => {
   return (
-    <div className="w-64 bg-white border-r shadow-sm relative">
-      <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-sm border-b p-4">
-        <h1 className="text-lg font-bold text-primary mb-4">CyberSec Frameworks Assessment App</h1>
+    <div className="w-64 bg-white shadow-sm relative">
+      <div className="sticky top-0 z-10 bg-white/75 backdrop-blur-sm border-b p-4">
+        <h1 className="text-lg font-bold text-primary">CyberSec Frameworks Assessment App</h1>
       </div>
-      <ScrollArea className="h-[calc(100vh-4rem)]">
+      <ScrollArea>
         <div className="p-4">
           <Accordion type="multiple" defaultValue={["owasp", "dsomm", "mitre"]} className="space-y-2">
             <AccordionItem value="owasp">

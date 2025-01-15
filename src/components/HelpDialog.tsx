@@ -21,13 +21,16 @@ export const HelpDialog = () => {
           <HelpCircle className="h-5 w-5" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-3xl">
+      <DialogContent className="max-w-3xl" style={{ maxHeight: 'calc(95vh - 40px)', overflowY: 'auto', margin: '10px'}}>
         <DialogHeader>
-          <DialogTitle className="text-xl mb-4">About Security Controls</DialogTitle>
+          <DialogTitle className="text-xl mb-4">About the Assessment App</DialogTitle>
         </DialogHeader>
         <DialogDescription className="space-y-4 text-justify">
           <p>
-            The security controls found in this document are the result of combining three different state-of-the-art security standards.
+          <b>For the assessment, it is recommended to mark a specific activity as "covered" only after the "audit notes" have been introduced. Changes can be exported to a JSON file. Download the file to save all modifications and import again later.</b>
+          </p>
+          <p>
+            The security controls found in this webapp tool are the result of combining three different state-of-the-art security standards.
             These security standards are OWASP's ASVS and DSOMM, and MITRE ATT&CK.
           </p>
           <p>
@@ -38,19 +41,17 @@ export const HelpDialog = () => {
           </p>
           <p>
             All security controls have been categorized in various groups and sub-groups, named dimensions and areas.
-            A dimension reflects a high-level classification of the different areas that have to be considered throughout the SSDLC.
-            Each dimension and area is described in detail in the corresponding sheet. The aim behind this classification is to organize
-            all security controls in a comprehensive but flexible manner, in order to facilitate the analysis process.
-            For the assessment, it is recommended to work directly on the "Assesment" cells that can be found in sheet "Security Controls".
-            All other sheets are intended to be used for reference only.
+            A dimension reflects a high-level classification of the different areas of security that have to be considered throughout the SSDLC.
+            Each dimension and area is described in detail in the corresponding page. The aim behind this classification is to organize
+            all security controls in a comprehensive but flexible manner, in order to facilitate the analysis process to conduct holistic cybersecurity assessments.
           </p>
           <p className="font-medium">
-            NOTE: In the "Security Controls" sheet, all activities/controls coming from MITTRE ATT&CK's framework are marked in red.
-            This means that the original approach that was considered by MITTRE when creating this activity was the one of an adversary
+            NOTE: All activities/controls coming from MITRE ATT&CK's framework should be considered as potential threats that could be considered when designing the  
+            application or platform's cibersecurity infrastructure and defenses. The reason behind this is that the original considered approach by MITRE when creating this activity was the one of an adversary
             or attacker trying to hack into the organization's systems. Because of this, they are presented in this document only as
             possible security risks, that link to a mitigation measure or remediation strategy that can be applied as a defensive mechanism.
-            It is the responsibility of the organization or the project's manager to decide upon each of these risk-remediation proposals,
-            regarding whether the mitigation or monitoring controls should be implemented or not.
+            It is the responsibility of the organization or the project's manager(s) to decide upon each of these risk-remediation proposals,
+            regarding whether the mitigation measures or monitoring controls should be implemented or not.
           </p>
           <div className="mt-6">
             <h3 className="font-semibold mb-2">Sources</h3>
@@ -82,7 +83,7 @@ export const HelpDialog = () => {
                   rel="noopener noreferrer"
                   className="text-accent hover:underline"
                 >
-                  MITTRE ATT&CK Framework
+                  MITRE ATT&CK Framework
                 </a>
               </li>
             </ul>
