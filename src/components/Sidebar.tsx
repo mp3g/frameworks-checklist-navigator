@@ -15,10 +15,11 @@ interface SidebarProps {
 }
 
 const getProgressColor = (progress: number) => {
-  if (progress >= 80) return "bg-[#F2FCE2]";
-  if (progress >= 50) return "bg-[#FEF7CD]";
-  if (progress >= 20) return "bg-[#FDE1D3]";
-  return "bg-[#FFDEE2]";
+  if (progress === 100) return "bg-[#8B5CF6]"; // Vivid purple for 100%
+  if (progress >= 80) return "bg-[#F2FCE2]";   // Light green for ≥80%
+  if (progress >= 50) return "bg-[#FEF7CD]";   // Light yellow for ≥50%
+  if (progress >= 20) return "bg-[#FDE1D3]";   // Light orange for ≥20%
+  return "bg-[#FFDEE2]";                       // Light red for <20%
 };
 
 const calculateDimensionProgress = (dimension: Dimension) => {
