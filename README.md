@@ -1,69 +1,61 @@
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/9a2c2acf-7ca1-4b19-a8d5-5e8e8b1b9320
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/9a2c2acf-7ca1-4b19-a8d5-5e8e8b1b9320) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9a2c2acf-7ca1-4b19-a8d5-5e8e8b1b9320) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+<p>
+  The security controls found in this webapp tool are the result of combining three different state-of-the-art security standards.
+  These security standards are OWASP's ASVS and DSOMM, and MITRE ATT&CK.
+</p>
+<p>
+  The combination of these three standards provides an extensive overall analysis of an organization's cybersecurity objectives,
+  ensuring an exhaustive and thorough examination from three different perspectives: Security of Applications (blue team/white box perspective),
+  Security of Applications and Systems (red team/black box perspective), and a governance perspective of the SSDLC process,
+  via a high level overview of the DevSecOps required activities to comply with Security.
+</p>
+<p>
+  All security controls have been categorized in various groups and sub-groups, named dimensions and areas.
+  A dimension reflects a high-level classification of the different areas of security that have to be considered throughout the SSDLC.
+  Each dimension and area is described in detail in the corresponding page. The aim behind this classification is to organize
+  all security controls in a comprehensive but flexible manner, in order to facilitate the analysis process to conduct holistic cybersecurity assessments.
+</p>
+<p className="font-medium">
+  NOTE: All activities/controls coming from MITRE ATT&CK's framework should be considered as potential threats that could be considered when designing the  
+  application or platform's cibersecurity infrastructure and defenses. The reason behind this is that the original considered approach by MITRE when creating this activity was the one of an adversary
+  or attacker trying to hack into the organization's systems. Because of this, they are presented in this document only as
+  possible security risks, that link to a mitigation measure or remediation strategy that can be applied as a defensive mechanism.
+  It is the responsibility of the organization or the project's manager(s) to decide upon each of these risk-remediation proposals,
+  regarding whether the mitigation measures or monitoring controls should be implemented or not.
+</p>
+<p> <b>For the assessment, it is recommended to mark a specific activity as "covered" only after the "audit notes" have been introduced. Changes can be exported to a JSON file. Download the file to save all modifications and import again later.</b>
+</p>
+<div className="mt-6">
+  <h3 className="font-semibold mb-2">Sources</h3>
+  <ul className="space-y-1">
+    <li>
+      <a
+        href="https://owasp.org/www-project-application-security-verification-standard/#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent hover:underline"
+      >
+        OWASP Application Security Verification Standard (ASVS)
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://owasp.org/www-project-devsecops-maturity-model/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent hover:underline"
+      >
+        OWASP Devsecops Maturity Model (DSOMM)
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://attack.mitre.org/resources/attack-data-and-tools/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent hover:underline"
+      >
+        MITRE ATT&CK Framework
+      </a>
+    </li>
+  </ul>
+</div>
