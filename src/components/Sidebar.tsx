@@ -70,7 +70,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                           "w-full text-left px-4 py-2 rounded-lg mt-1 transition-colors text-xs hover:brightness-95",
                           getProgressColor(progress),
                           selectedDimensionId === dimension.id
-                            ? "ring-2 ring-accent ring-opacity-50"
+                            ? "ring-2 ring-accent"
                             : ""
                         )}
                       >
@@ -97,7 +97,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                           "w-full text-left px-4 py-2 rounded-lg mt-1 transition-colors text-xs hover:brightness-95",
                           getProgressColor(progress),
                           selectedDimensionId === dimension.id
-                            ? "ring-2 ring-accent ring-opacity-50"
+                            ? "ring-2 ring-accent"
                             : ""
                         )}
                       >
@@ -124,7 +124,7 @@ export const Sidebar = ({ dimensions, selectedDimensionId, onSelectDimension }: 
                           "w-full text-left px-4 py-2 rounded-lg mt-1 transition-colors text-xs hover:brightness-95",
                           getProgressColor(progress),
                           selectedDimensionId === dimension.id
-                            ? "ring-2 ring-accent ring-opacity-50"
+                            ? "ring-2 ring-accent"
                             : ""
                         )}
                       >
