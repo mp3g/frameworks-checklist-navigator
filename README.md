@@ -1,3 +1,4 @@
+<h3>Introduction</h3>
 <p>This repository contains a lightweight business cybersecurity assesment tool for code development projects in the design phase of the SSDLC. </p>
 <p>
   The security controls found in this webapp tool are the result of combining three different state-of-the-art cybersecurity standards.
@@ -15,7 +16,7 @@
   Each dimension and area is described in detail in the corresponding page. The aim behind this classification is to organize
   all security controls in a comprehensive but flexible manner, in order to facilitate the analysis process to conduct holistic cybersecurity assessments.
 </p>
-<p className="font-medium">
+<p style="font-size:12px; color:gray">
   NOTE: All activities/controls coming from MITRE ATT&CK's framework should be considered as potential threats that could be considered when designing the  
   application or platform's cibersecurity infrastructure and defenses. The reason behind this is that the original considered approach by MITRE when creating this activity was the one of an adversary
   or attacker trying to hack into the organization's systems. Because of this, they are presented in this document only as
@@ -23,16 +24,16 @@
   It is the responsibility of the organization or the project's manager(s) to decide upon each of these risk-remediation proposals,
   regarding whether the mitigation measures or monitoring controls should be implemented or not.
 </p>
-<div className="mt-6">
- <h3 className="font-semibold mb-2">How to use</h3>
+<div>
+ <h3>How to use</h3>
   <p>Simply clone or download the repository and run <code>npm run dev</code> to compile and launch the webapp locally. Import the provided JSON file in <code>/assets/output.json</code> to include all security controls of the checklist. Now you can start working on your assesment.</p><p><b>WARNING!</b>: do not refresh the webpage or all changes will be lost. Use the export button for saving your modifications.</p>  
  <p><b>For the assessment, it is recommended to mark a specific activity as "covered" only after the "audit notes" have been introduced. Changes can be exported to a JSON file. Download the file to save all modifications and import again later.</b>
 </div>
 </p>
-<div className="mt-6">
-  <h3 className="font-semibold mb-2">Assets</h3>
+<div>
+  <h3>Assets</h3>
   <p>In the <code>/assets</code> directory, the following files are included, for further modifications and addition of new frameworks and checklists:</p>
-  <ul className="space-y-1">
+  <ul>
     <li>
         <b>Security_Controls_Checklist_DSOMM_ASVS_MITTRE.xlsx</b> - Union of the 3 frameworks (ASVS, DSOMM, MITRE) categorised into groups and subgroups (dimensions and areas)
     </li>
@@ -44,9 +45,9 @@
     </li>
   </ul>
 </div>
-<div className="mt-6">
-  <h3 className="font-semibold mb-2">Sources</h3>
-  <ul className="space-y-1">
+<div>
+  <h3>Sources</h3>
+  <ul>
     <li>
       <a
         href="https://owasp.org/www-project-application-security-verification-standard/#"
@@ -55,7 +56,7 @@
         className="text-accent hover:underline"
       >
         OWASP Application Security Verification Standard (ASVS)
-      </a>
+      </a> - v4.0.3
     </li>
     <li>
       <a
@@ -75,7 +76,7 @@
         className="text-accent hover:underline"
       >
         MITRE ATT&CK Framework
-      </a>
+      </a> - v16.1
     </li>
   </ul>
 </div>
