@@ -1,5 +1,6 @@
+<p>This repository contains a lightweight business cybersecurity assesment tool for code development projects in the design phase of the SSDLC. </p>
 <p>
-  The security controls found in this webapp tool are the result of combining three different state-of-the-art security standards.
+  The security controls found in this webapp tool are the result of combining three different state-of-the-art cybersecurity standards.
   These security standards are OWASP's ASVS and DSOMM, and MITRE ATT&CK.
 </p>
 <p>
@@ -9,7 +10,7 @@
   via a high level overview of the DevSecOps required activities to comply with Security.
 </p>
 <p>
-  All security controls have been categorized in various groups and sub-groups, named dimensions and areas.
+  All security controls have been categorized in various groups and sub-groups, named <b>dimensions</b> and <b>areas</b>.
   A dimension reflects a high-level classification of the different areas of security that have to be considered throughout the SSDLC.
   Each dimension and area is described in detail in the corresponding page. The aim behind this classification is to organize
   all security controls in a comprehensive but flexible manner, in order to facilitate the analysis process to conduct holistic cybersecurity assessments.
@@ -22,8 +23,27 @@
   It is the responsibility of the organization or the project's manager(s) to decide upon each of these risk-remediation proposals,
   regarding whether the mitigation measures or monitoring controls should be implemented or not.
 </p>
-<p> <b>For the assessment, it is recommended to mark a specific activity as "covered" only after the "audit notes" have been introduced. Changes can be exported to a JSON file. Download the file to save all modifications and import again later.</b>
+<div className="mt-6">
+ <h3 className="font-semibold mb-2">How to use</h3>
+  <p>Simply clone or download the repository and run <code>npm run dev</code> to compile and launch the webapp locally. Import the provided JSON file in <code>/assets/output.json</code> to include all security controls of the checklist. Now you can start working on your assesment.</p><p><b>WARNING!</b>: do not refresh the webpage or all changes will be lost. Use the export button for saving your modifications.</p>  
+ <p><b>For the assessment, it is recommended to mark a specific activity as "covered" only after the "audit notes" have been introduced. Changes can be exported to a JSON file. Download the file to save all modifications and import again later.</b>
+</div>
 </p>
+<div className="mt-6">
+  <h3 className="font-semibold mb-2">Assets</h3>
+  <p>In the <code>/assets</code> directory, the following files are included, for further modifications and addition of new frameworks and checklists:</p>
+  <ul className="space-y-1">
+    <li>
+        <b>Security_Controls_Checklist_DSOMM_ASVS_MITTRE.xlsx</b> - Union of the 3 frameworks (ASVS, DSOMM, MITRE) categorised into groups and subgroups (dimensions and areas)
+    </li>
+    <li>
+      <b>output.json</b> - Translation of the above Excel to JSON format
+    </li>
+    <li>
+      <b>excel2json_script.py</b> - Script to perform the translation
+    </li>
+  </ul>
+</div>
 <div className="mt-6">
   <h3 className="font-semibold mb-2">Sources</h3>
   <ul className="space-y-1">
