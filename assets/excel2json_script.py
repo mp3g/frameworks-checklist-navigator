@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Load the Excel file
-file_path = 'Security_Controls_Checklist_DSOMM_ASVS_MITTRE.xlsx'
+file_path = 'Security_Controls_Checklist_DSOMM_ASVS_MITRE.xlsx'
 xls = pd.ExcelFile(file_path)
 
 # Load the relevant sheets into a dataframe

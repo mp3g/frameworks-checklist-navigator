@@ -325,7 +325,7 @@
                     },
                     {
                         "title": "Browser Session Hijacking",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1070,7 +1070,7 @@
                     },
                     {
                         "title": "Data Encoding",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1079,7 +1079,7 @@
                     },
                     {
                         "title": "Data Obfuscation",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1632,7 +1632,7 @@
                 "controls": [
                     {
                         "title": "Application Layer Protocol",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1642,7 +1642,7 @@
                     },
                     {
                         "title": "Communication Through Removable Media",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1651,7 +1651,7 @@
                     },
                     {
                         "title": "Non-Standard Port",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1660,7 +1660,7 @@
                     },
                     {
                         "title": "Protocol Tunneling",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1671,7 +1671,7 @@
                     },
                     {
                         "title": "Proxy",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1682,7 +1682,7 @@
                     },
                     {
                         "title": "Remote Access Software",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1695,7 +1695,7 @@
                     },
                     {
                         "title": "Web Service",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "Bidirectional Communication, Dead Drop Resolver, One-Way Communication",
                         "mitigation_measures": [
@@ -1712,7 +1712,7 @@
                 "controls": [
                     {
                         "title": "Brute Force",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1721,7 +1721,7 @@
                     },
                     {
                         "title": "Credentials from Password Stores",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "Stored credentials can be in: Cloud Secrets Management Stores, Credentials from Web Browsers, Keycloak, Password Managers, Windows Credential Manager, etc",
                         "mitigation_measures": [
@@ -1730,7 +1730,7 @@
                     },
                     {
                         "title": "Forge of Web Credentials",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: SAML tokens, web cookies",
                         "mitigation_measures": [
@@ -1739,7 +1739,7 @@
                     },
                     {
                         "title": "Monitor Undesired Access to Filesystem and/or Files",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1749,7 +1749,7 @@
                     },
                     {
                         "title": "Multi-Factor Authentication (MFA) Request Generation",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1758,7 +1758,7 @@
                     },
                     {
                         "title": "Stealing of Web Session Cookie",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1767,7 +1767,7 @@
                     },
                     {
                         "title": "Unsecured Credentials: Bash History",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1784,7 +1784,7 @@
                 "controls": [
                     {
                         "title": "Data from Cloud Storage",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1793,7 +1793,7 @@
                     },
                     {
                         "title": "Data from Configuration Repository",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1802,7 +1802,7 @@
                     },
                     {
                         "title": "Data from Local System",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1813,7 +1813,7 @@
                     },
                     {
                         "title": "Data from Network Shared Drive",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1822,7 +1822,7 @@
                     },
                     {
                         "title": "Data from Removable Media",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1831,7 +1831,7 @@
                     },
                     {
                         "title": "Data Staged: Local and Remote Data Staging",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1844,7 +1844,7 @@
                     },
                     {
                         "title": "Email Collection (locally, remote server, email forwarding rule, etc)",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1865,7 +1865,7 @@
                     },
                     {
                         "title": "Screen Capture",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1882,7 +1882,7 @@
                 "controls": [
                     {
                         "title": "Build Image on Host",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1891,7 +1891,7 @@
                     },
                     {
                         "title": "Debugger Evasion",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1902,7 +1902,7 @@
                     },
                     {
                         "title": "Deobfuscate/Decode Files or Information",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1913,7 +1913,7 @@
                     },
                     {
                         "title": "Direct Volume Access",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1924,7 +1924,7 @@
                     },
                     {
                         "title": "Execution Guardrails",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1933,7 +1933,7 @@
                     },
                     {
                         "title": "Exploitation for Defense Evasion",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1942,7 +1942,7 @@
                     },
                     {
                         "title": "File and Directory Permissions Modification",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1953,7 +1953,7 @@
                     },
                     {
                         "title": "Hidden Artifacts",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "Email Hiding Rules, File/Path Exclusions, Hidden File System, Hidden Files and Directories, Hidden Users, Hidden Window, Ignore Process Interrupts, NTFS File Attributes, Process Argument Spoofing, Resource Forking, Run Virtual Instance, VBA Stomping, etc.",
                         "mitigation_measures": [
@@ -1962,7 +1962,7 @@
                     },
                     {
                         "title": "Impaired Defenses",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: Disabled or Modified Cloud Firewall, Cloud Logs, Linux Audit System, System Firewall, Tools, Windows Event Logging, Downgraded Attack, Impaired Command History Logging, Indicator Blocking, Safe Mode Boot, Spoof Security Alerting, etc.",
                         "mitigation_measures": [
@@ -1973,7 +1973,7 @@
                     },
                     {
                         "title": "Impersonation",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -1982,7 +1982,7 @@
                     },
                     {
                         "title": "Indicator Removal",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "Indicators of Compromise: Clear Command History, Clear Linux or Mac System Logs, Clear Mailbox Data, Clear Network Connection History and Configurations, Clear Persistence, Clear Windows Event Logs, File Deletion, Network Share Connection Removal, Relocate Malware, Timestomp, etc.",
                         "mitigation_measures": [
@@ -1991,7 +1991,7 @@
                     },
                     {
                         "title": "Indirect Command Execution",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2000,7 +2000,7 @@
                     },
                     {
                         "title": "Masquerading",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2013,7 +2013,7 @@
                     },
                     {
                         "title": "Modified Cloud Compute Infrastructure",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2022,7 +2022,7 @@
                     },
                     {
                         "title": "Modified Cloud Resource Hierarchy",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2031,7 +2031,7 @@
                     },
                     {
                         "title": "Modified Registry",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2044,7 +2044,7 @@
                     },
                     {
                         "title": "Modified System Image",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2057,7 +2057,7 @@
                     },
                     {
                         "title": "Network Boundary Bridging",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2068,7 +2068,7 @@
                     },
                     {
                         "title": "Obfuscated Files or Information",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2083,7 +2083,7 @@
                     },
                     {
                         "title": "Plist File Modification",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2096,7 +2096,7 @@
                     },
                     {
                         "title": "Reflective Code Loading",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2109,7 +2109,7 @@
                     },
                     {
                         "title": "Rogue Domain Controller",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2124,7 +2124,7 @@
                     },
                     {
                         "title": "Rootkit",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2133,7 +2133,7 @@
                     },
                     {
                         "title": "Subverted Trust Controls",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: Code Signing, Code Signing Policy Modification, Gatekeeper Bypass, Install Root Certificate, Mark-of-the-Web Bypass, SIP and Trust Provider Hijacking, etc.",
                         "mitigation_measures": [
@@ -2146,7 +2146,7 @@
                     },
                     {
                         "title": "System Binary Proxy Execution",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2157,7 +2157,7 @@
                     },
                     {
                         "title": "System Script Proxy Execution",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2166,7 +2166,7 @@
                     },
                     {
                         "title": "Template Injection",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2177,7 +2177,7 @@
                     },
                     {
                         "title": "Trusted Developer Utilities Proxy Execution",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2188,7 +2188,7 @@
                     },
                     {
                         "title": "Unused/Unsupported Cloud Regions",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2197,7 +2197,7 @@
                     },
                     {
                         "title": "Virtualization/Sandbox Evasion",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2206,7 +2206,7 @@
                     },
                     {
                         "title": "XSL Script Processing",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2287,7 +2287,7 @@
                 "controls": [
                     {
                         "title": "Cloud Administration Command",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2296,7 +2296,7 @@
                     },
                     {
                         "title": "Command and Scripting Interpreter",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "Examples of interpreters: AppleScript, AutoHotKey & AutoIT, Cloud API, JavaScript, Lua, Network Device CLI, PowerShell, Python, Unix Shell, Visual Basic, Windows Command Shell",
                         "mitigation_measures": [
@@ -2309,7 +2309,7 @@
                     },
                     {
                         "title": "Container Administration Command",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2318,7 +2318,7 @@
                     },
                     {
                         "title": "Exploitation for Client Execution",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2327,7 +2327,7 @@
                     },
                     {
                         "title": "Inter-Process Communication",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2336,7 +2336,7 @@
                     },
                     {
                         "title": "Native API",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2347,7 +2347,7 @@
                     },
                     {
                         "title": "Serverless Execution",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2356,7 +2356,7 @@
                     },
                     {
                         "title": "Shared Modules",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2367,7 +2367,7 @@
                     },
                     {
                         "title": "System Services",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2376,7 +2376,7 @@
                     },
                     {
                         "title": "System Services: Launchctl",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2389,7 +2389,7 @@
                     },
                     {
                         "title": "System Services: Service Execution",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2398,7 +2398,7 @@
                     },
                     {
                         "title": "User Interaction: Execution of Malicious Files or Links",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2409,7 +2409,7 @@
                     },
                     {
                         "title": "Windows Management Instrumentation",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2426,7 +2426,7 @@
                 "controls": [
                     {
                         "title": "Automated Exfiltration",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2435,7 +2435,7 @@
                     },
                     {
                         "title": "Data Transfer Size Limits",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2444,7 +2444,7 @@
                     },
                     {
                         "title": "Exfiltration Over Alternative Protocol",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol, Exfiltration Over Symmetric Encrypted Non-C2 Protocol, Exfiltration Over Unencrypted Non-C2 Protocol, ",
                         "mitigation_measures": [
@@ -2453,7 +2453,7 @@
                     },
                     {
                         "title": "Exfiltration Over C2 Channel",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2462,7 +2462,7 @@
                     },
                     {
                         "title": "Exfiltration Over Other Network Medium",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.:  Exfiltration Over Bluetooth",
                         "mitigation_measures": [
@@ -2473,7 +2473,7 @@
                     },
                     {
                         "title": "Exfiltration Over Physical Medium",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: Exfiltration over USB",
                         "mitigation_measures": [
@@ -2482,7 +2482,7 @@
                     },
                     {
                         "title": "Exfiltration Over Web Service",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: Exfiltration Over Webhook, Exfiltration to Cloud Storage, Exfiltration to Code Repository, Exfiltration to Text Storage Sites",
                         "mitigation_measures": [
@@ -2491,7 +2491,7 @@
                     },
                     {
                         "title": "Scheduled Transfer",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2500,7 +2500,7 @@
                     },
                     {
                         "title": "Transfer Data to Cloud Account",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2519,7 +2519,7 @@
                 "controls": [
                     {
                         "title": "Account Access Removal",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2535,7 +2535,7 @@
                     },
                     {
                         "title": "Data Destruction",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2546,7 +2546,7 @@
                     },
                     {
                         "title": "Data Encrypted for Impact",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2559,7 +2559,7 @@
                     },
                     {
                         "title": "Data Manipulation",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "Manipulated Data can come from: Runtime Data Manipulation, Stored Data Manipulation, Transmitted Data Manipulation, ",
                         "mitigation_measures": [
@@ -2568,7 +2568,7 @@
                     },
                     {
                         "title": "Defacement",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2579,7 +2579,7 @@
                     },
                     {
                         "title": "Disk Wipe",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2588,7 +2588,7 @@
                     },
                     {
                         "title": "Endpoint Denial of Service",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2601,7 +2601,7 @@
                     },
                     {
                         "title": "Financial Theft",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2610,7 +2610,7 @@
                     },
                     {
                         "title": "Firmware Corruption",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2619,7 +2619,7 @@
                     },
                     {
                         "title": "Inhibit System Recovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2632,7 +2632,7 @@
                     },
                     {
                         "title": "Network Denial of Service",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2641,7 +2641,7 @@
                     },
                     {
                         "title": "Resource Hijacking",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2650,7 +2650,7 @@
                     },
                     {
                         "title": "Service Stop",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2665,7 +2665,7 @@
                     },
                     {
                         "title": "System Shutdown/Reboot",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2852,7 +2852,7 @@
                 "controls": [
                     {
                         "title": "Drive-by Compromise",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2865,7 +2865,7 @@
                     },
                     {
                         "title": "Exploit Public-Facing Application",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2874,7 +2874,7 @@
                     },
                     {
                         "title": "Hardware Additions",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2885,7 +2885,7 @@
                     },
                     {
                         "title": "Phishing",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2902,7 +2902,7 @@
                     },
                     {
                         "title": "Supply Chain Compromise",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2911,7 +2911,7 @@
                     },
                     {
                         "title": "Trusted Relationship",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2928,7 +2928,7 @@
                 "controls": [
                     {
                         "title": "Exploitation of Remote Services",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2937,7 +2937,7 @@
                     },
                     {
                         "title": "Internal Spearphishing",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2946,7 +2946,7 @@
                     },
                     {
                         "title": "Lateral Tool Transfer",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2955,7 +2955,7 @@
                     },
                     {
                         "title": "Remote Service Session Hijacking",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2966,7 +2966,7 @@
                     },
                     {
                         "title": "Remote Services",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -2979,7 +2979,7 @@
                     },
                     {
                         "title": "Taint Shared Content",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3103,7 +3103,7 @@
                     },
                     {
                         "title": "Obtain Malware Capabilities",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3124,7 +3124,7 @@
                 "controls": [
                     {
                         "title": "Browser Extensions",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3137,7 +3137,7 @@
                     },
                     {
                         "title": "Compromised Host Software Binary",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3148,7 +3148,7 @@
                     },
                     {
                         "title": "Implant Internal Image",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3159,7 +3159,7 @@
                     },
                     {
                         "title": "Office Application Startup",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "Specifically verify the trustworthiness of the source of Add-ins, Office Template Macros, Office Test, Outlook Forms, Outlook Home Page and Outlook Rules. ",
                         "mitigation_measures": [
@@ -3172,7 +3172,7 @@
                     },
                     {
                         "title": "Power Settings",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3182,7 +3182,7 @@
                     },
                     {
                         "title": "Server Software Component",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3193,7 +3193,7 @@
                     },
                     {
                         "title": "Uncontrolled Account Creation",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3212,7 +3212,7 @@
                 "controls": [
                     {
                         "title": "Escape to Host",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3221,7 +3221,7 @@
                     },
                     {
                         "title": "Exploitation for Privilege Escalation",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3240,7 +3240,7 @@
                 "controls": [
                     {
                         "title": "Account Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3253,7 +3253,7 @@
                     },
                     {
                         "title": "Active Scanning",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "Active Scanning examples: Scanning IP Blocks, Vulnerability Scanning, Wordlist Scanning",
                         "mitigation_measures": [
@@ -3266,7 +3266,7 @@
                     },
                     {
                         "title": "Application Window Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3277,7 +3277,7 @@
                     },
                     {
                         "title": "Browser Information Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3288,7 +3288,7 @@
                     },
                     {
                         "title": "Cloud Infrastructure Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3297,7 +3297,7 @@
                     },
                     {
                         "title": "Cloud Service Dashboard",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3306,7 +3306,7 @@
                     },
                     {
                         "title": "Cloud Service Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3317,7 +3317,7 @@
                     },
                     {
                         "title": "Cloud Storage Object Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3327,7 +3327,7 @@
                     },
                     {
                         "title": "Container and Resource Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3338,7 +3338,7 @@
                     },
                     {
                         "title": "Device Driver Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3347,7 +3347,7 @@
                     },
                     {
                         "title": "Domain Trust Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3359,7 +3359,7 @@
                     },
                     {
                         "title": "File and Directory Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3370,7 +3370,7 @@
                     },
                     {
                         "title": "Gather Victim Host Information",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: Client Configurations, Firmware, Hardware, Software",
                         "mitigation_measures": [
@@ -3381,7 +3381,7 @@
                     },
                     {
                         "title": "Gather Victim Identity Information",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: Credentials, Email Addresses, Employee Names",
                         "mitigation_measures": [
@@ -3394,7 +3394,7 @@
                     },
                     {
                         "title": "Gather Victim Network Information",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: DNS, Domain Properties, IP Addresses, Network Security Appliances, Network Topology, Network Trust Dependencies, etc.",
                         "mitigation_measures": [
@@ -3405,7 +3405,7 @@
                     },
                     {
                         "title": "Gather Victim Org Information",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "e.g.: Business Relationships, Determine Physical Locations, Identify Business Tempo, Identify Roles, etc.",
                         "mitigation_measures": [
@@ -3416,7 +3416,7 @@
                     },
                     {
                         "title": "Group Policy Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3429,14 +3429,14 @@
                     },
                     {
                         "title": "Log Enumeration",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": "Log Enumeration"
                     },
                     {
                         "title": "Network Service Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3447,7 +3447,7 @@
                     },
                     {
                         "title": "Network Share Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3458,7 +3458,7 @@
                     },
                     {
                         "title": "Password Policy Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3467,7 +3467,7 @@
                     },
                     {
                         "title": "Peripheral Device Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3478,7 +3478,7 @@
                     },
                     {
                         "title": "Permission Groups Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3489,7 +3489,7 @@
                     },
                     {
                         "title": "Phishing for Information",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3502,7 +3502,7 @@
                     },
                     {
                         "title": "Process Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3515,7 +3515,7 @@
                     },
                     {
                         "title": "Query Registry",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3526,7 +3526,7 @@
                     },
                     {
                         "title": "Remote System Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3539,7 +3539,7 @@
                     },
                     {
                         "title": "Search Closed Sources",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3550,7 +3550,7 @@
                     },
                     {
                         "title": "Search Open Technical Databases",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3561,7 +3561,7 @@
                     },
                     {
                         "title": "Search Open Websites/Domains",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3572,7 +3572,7 @@
                     },
                     {
                         "title": "Search Victim-Owned Websites",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3581,7 +3581,7 @@
                     },
                     {
                         "title": "Software Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3592,7 +3592,7 @@
                     },
                     {
                         "title": "System Information Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3605,7 +3605,7 @@
                     },
                     {
                         "title": "System Location Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3618,7 +3618,7 @@
                     },
                     {
                         "title": "System Network Configuration Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3629,7 +3629,7 @@
                     },
                     {
                         "title": "System Network Connections Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3640,7 +3640,7 @@
                     },
                     {
                         "title": "System Owner/User Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3653,7 +3653,7 @@
                     },
                     {
                         "title": "System Service Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3664,7 +3664,7 @@
                     },
                     {
                         "title": "System Time Discovery",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3690,7 +3690,7 @@
                 "controls": [
                     {
                         "title": "Dynamic Resolution: DNS Calculation (ingress service w load balancer)",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3699,7 +3699,7 @@
                     },
                     {
                         "title": "Encrypted Channel Networks and environment visibility (namespaces)",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3710,7 +3710,7 @@
                     },
                     {
                         "title": "Hidden or Uncontrolled Infrastructure",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
@@ -3719,7 +3719,7 @@
                     },
                     {
                         "title": "Ingress Tool Transfer",
-                        "category": "MITTRE ATT&CK",
+                        "category": "MITRE ATT&CK",
                         "isCompleted": false,
                         "description": "nan",
                         "mitigation_measures": [
