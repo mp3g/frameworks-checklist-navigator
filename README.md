@@ -1,5 +1,9 @@
 ## Introduction
-This repository contains a lightweight business cybersecurity assesment tool for code development projects in the design phase of the SSDLC.
+This repository contains a lightweight business cybersecurity assesment tool for code development projects in the design phase of the SSDLC. Organizations can use this checklist to:
+
++ Assess and enhance their cybersecurity posture
++ Implement comprehensive security controls
++ Ensure compliance with multiple security standards
 
 The security controls found in this webapp tool are the result of combining three different state-of-the-art cybersecurity standards. These security standards are **OWASP's ASVS**, **DSOMM**, and **MITRE ATT&CK**.
 
